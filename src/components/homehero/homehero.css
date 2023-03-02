@@ -4,11 +4,8 @@
         background-color: #3e4396;
 }
 
-.homehero-left{
-    width:60%;
+.homehero-wrapper{
+    width:100%;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-.homehero-right {
-    width: 40%;
-}
