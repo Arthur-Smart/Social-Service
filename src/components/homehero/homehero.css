@@ -1,11 +1,41 @@
 .homehero{
     width:100%;
     height: calc(100vh - 60px);
-        background-color: #3e4396;
+    background: linear-gradient(to right,
+                rgba(62, 66, 150, 0.87),
+                rgba(62, 66, 150, 0.87)),
+            url("../../assets/mainbg.jpg");
+    background-size: cover;
+    background-position: center;     
 }
+/*
+ background-color: #3e4396;
+*/
 
 .homehero-wrapper{
     width:100%;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+.professional{
+    color:transparent;
+    -webkit-text-stroke: 2px #F59E0B;
+    font-weight:900;
+}
+
+.location-button{
+    width:100%;
+}
+
+.location-s-input{
+    width:90%;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.search-btn{
+    width:10%;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    text-align: center;
+}
