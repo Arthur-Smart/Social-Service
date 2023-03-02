@@ -6,8 +6,8 @@ function HomeHero() {
     <div className='homehero flex items-center justify-center'>
         <div className='container'>
             <div className='homehero-wrapper'>
-                <p className='text-6xl text-amber-500 font-black mb-3'>SkillsHub.</p>
-                <p className='text-5xl  text-white'>Simplify the process of finding skilled <span className='professional text-6xl'>professionals</span> for any <span className='professional text-6xl'>job</span> in your location. </p>
+                <p className='text-6xl text-amber-500 font-black mb-3 font-animate'>SkillsHub.</p>
+                <p className='text-4xl  text-white'>Simplify the process of finding skilled <span className='professional text-6xl'>professionals</span> for any <span className='professional text-6xl'>job</span> in your location. </p>
                 <div className='flex flex-col mt-4'>
                     <input className='skill-s-input mb-2 px-2 py-3 outline-0 rounded-md' type='text' placeholder='Search a skill'/>
                     <div className='location-button items-center  flex'>
