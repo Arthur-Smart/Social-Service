@@ -12,7 +12,7 @@ function HomeHero() {
                     <input className='skill-s-input mb-2 px-2 py-3 outline-0 rounded-md' type='text' placeholder='Search a skill'/>
                     <div className='location-button items-center  flex'>
                         <input className='location-s-input mb-25 px-2 py-3 outline-0 ' type='Type Location' placeholder='Location'/>
-                        <button className='flex  text-white bg-amber-500 self-start search-btn bg-red-500 py-3 px-10  text-center'>Search</button>
+                        <button className='flex  text-white self-start search-btn bg-red-500 py-3 px-10  text-center'>Search</button>
                     </div>
                     <div className='flex items-center mt-2'>
                       <p className='text-white  py-2 px-3 rounded-full border-2' >Graphic designer</p>
