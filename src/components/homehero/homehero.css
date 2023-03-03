@@ -2,7 +2,7 @@
     width:100%;
     position: relative;
     height: calc(100vh - 60px);
-    background-color: rgba(62, 66, 150, 0.87);
+    background-color: rgba(62, 66, 150, 0.904);
     overflow: hidden;
 }
 

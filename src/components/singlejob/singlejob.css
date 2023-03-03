@@ -1,0 +1,15 @@
+.singlejob{
+    width:32%;
+    height: 30vh;
+}
+
+.singlejob img{
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+}
+
+.job-post-btn{
+    border-radius: 3px;
+    background-color: #3e4396;
+}

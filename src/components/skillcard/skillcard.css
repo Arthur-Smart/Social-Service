@@ -1,0 +1,41 @@
+.skillcard{
+    width:252px;
+    height:344px;
+    color:white;
+    border-radius: 5px;
+    cursor:pointer;
+    position: relative;
+}
+
+.skillcard::before{
+    content:"";
+    position: absolute;
+    top:0;
+    bottom: 0;
+    width:100%;
+    height:100%;
+    background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.973),
+                rgba(62, 66, 150, 0));
+}
+
+.skillcard img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.desc{
+    position: absolute;
+    font-weight: 300;
+    top:15px;
+    left:15px;
+}
+
+.title{
+    position: absolute;
+    font-weight: 500;
+    font-size: 24px;
+    left:15px;
+    top:40px;
+}

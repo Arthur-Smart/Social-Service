@@ -1,0 +1,22 @@
+.about{
+    width:100%;
+    background-color: #3e4396;
+}
+
+.about-left{
+    width:50%;
+}
+
+.about-right {
+    width: 50%;
+}
+
+.number{
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
