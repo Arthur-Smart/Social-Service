@@ -1,10 +1,13 @@
 import React from 'react'
 import About from '../../components/about/About'
+import Recommend from '../../components/recommend/Recommend'
+import ServicesCarousel from '../../components/carousel/ServicesCarousel'
 import HomeHero from '../../components/homehero/HomeHero'
 import PostedJobs from '../../components/postedjobs/PostedJobs'
 import Slide from '../../components/slider/Slide'
 import SliderTech from '../../components/slidertech/SliderTech'
 import './home.css'
+import HowToEngage from '../../components/howtoengage/HowToEngage'
 
 function Home() {
   return (
@@ -14,6 +17,9 @@ function Home() {
         <SliderTech/>
         <PostedJobs/>
         <About/>
+        <ServicesCarousel/>
+        <Recommend/>
+        <HowToEngage/>
     </div>
   )
 }

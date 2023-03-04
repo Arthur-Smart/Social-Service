@@ -1,0 +1,33 @@
+.service-card{
+    width:400px;
+    height:40vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-img{
+  height:55%;
+  width:100%;
+  object-fit: cover;
+}
+
+.service-owner-pic{
+    width:25px;
+    height:25px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.price-tab{
+    position: absolute;
+    top: 30px;
+    right: -100px;
+    height: 50px;
+    width: 300px;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+

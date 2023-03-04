@@ -11,6 +11,16 @@
     width: 60%;
 }
 
+.why-image{
+    animation: motion 2s linear infinite alternate;
+}
+
+
+@keyframes motion{
+    to{
+        transform: translateY(20px)
+    }
+}
 
 .number{
     width:30px;

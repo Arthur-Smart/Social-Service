@@ -1,0 +1,26 @@
+.recommend{
+    width:100%;
+    height:60vh;
+    background-image: url('../../assets/web-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.recommend-title {
+    color: transparent;
+    -webkit-text-stroke: 2px #F59E0B;
+    font-weight: 900;
+}
+
+.recommend-btn-1{
+    background-color: #FFA500;
+}
+
+.recomment-btn-2{
+    background-color: transparent;
+}
+
+.recomment-btn-2:hover{
+    background-color: #FFA500;
+}
