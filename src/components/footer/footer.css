@@ -1,3 +1,19 @@
 .footer{
     width:100%;
+    
+}
+
+.footer-search-button{
+    width:60%;
+}
+
+.flag{
+    width:100px;
+}
+
+.line{
+    width:85%;
+    height:1px;
+    background-color: rgba(128, 128, 128, 0.288);
+    margin:20px 0;
 }
