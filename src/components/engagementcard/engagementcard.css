@@ -1,0 +1,23 @@
+.engagementcard{
+    width:20vw;
+    height:50vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.engagement-c-img{
+    width:100%;
+    height:45%;
+    object-fit: cover;
+}
+
+.engagement-p-img{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.engagement-c-like-comment{
+    border-top: 1px solid rgba(128, 128, 128, 0.281);
+}
