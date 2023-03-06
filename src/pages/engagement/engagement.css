@@ -1,0 +1,17 @@
+.engagement{
+    width:100%;
+}
+
+.engagement-left{
+    width:60%;
+}
+
+.engagement-right {
+    width: 40%;
+}
+
+.engagement-img{
+    width:100%;
+    height:60vh;
+    object-fit: cover;
+}
