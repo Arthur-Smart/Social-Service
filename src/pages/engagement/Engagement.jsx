@@ -12,7 +12,7 @@ function Engagement() {
             <div className='engagement-left'>
               <div className='engagement-desc'>
                   <p className='font-bold text-2xl text-zinc-500'>I will design a professional minimalist modern business logo</p>
-                  <div className='flex items-center mt-2'>
+                  <div className='flex items-center mt-2 border-2 p-2'>
                     <img className='engagement-p-pic' src={require('../../assets/mainbg.jpg')} />
                     <p className='font-bold text-black ml-2 font-bold text-lg'>Paul Njoroge</p>
                     <div className='flex items-center ml-2'>
