@@ -15,3 +15,40 @@
     height:60vh;
     object-fit: cover;
 }
+
+.engagement-p-pic{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit: cover;
+}
+
+.engagement-info{
+    position:sticky;
+    width:90%;
+    height:50vh;
+    top:150px;
+}
+
+.engagement-btn-btn{
+    background-color: #3e4396;
+    width:100%;
+}
+
+.contact-me{
+    display: none;
+}
+
+.show{
+    display: flex;
+}
+
+.review-input{
+    width:100%;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.247);
+}
+
+.review-btn{
+    background-color: #3e4396;
+}
