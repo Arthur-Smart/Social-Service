@@ -23,7 +23,7 @@ function Engagement() {
                       <p className='text-amber-500 font-bold' ><i class="fa-solid fa-star"></i></p>
                       <p className='text-amber-500 font-bold' >(5)</p>
                     </div>
-                    <button className='py-1 px-2 bg-red-500 ml-2 rounded-md text-white'>All my <span>engagements</span></button>
+                    <button className='py-1 px-2 bg-red-500 ml-2 rounded-md text-white'>All my <span className='font-bold'>engagements</span></button>
                   </div>
                   <img className='engagement-img mt-5' src={require('../../assets/mainbg.jpg')} alt='skills hub'/>
                   <p className='text-zinc-500 text-xl font-bold'>Engagement description</p>
