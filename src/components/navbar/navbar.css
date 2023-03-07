@@ -6,6 +6,7 @@
     left:0;
     background-color: #fff;
     z-index:999;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.349);
 }
 
 .left-nav{
