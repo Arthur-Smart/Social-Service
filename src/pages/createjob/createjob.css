@@ -17,3 +17,16 @@
 .location input {
     width: 49%;
 }
+
+.c-job-description{
+    width:100%;
+}
+
+.c-job-description textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 25vh;
+    max-height: 25vh;
+    min-height: 25vh;
+}
