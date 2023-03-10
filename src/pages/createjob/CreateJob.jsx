@@ -3,7 +3,7 @@ import './createjob.css'
 
 function CreateJob() {
   return (
-    <div className='create-job'>
+    <div className='create-job flex flex-col items-center justify-center'>
         <div className='container'>
 
         </div>
