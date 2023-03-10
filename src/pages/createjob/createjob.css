@@ -9,3 +9,11 @@
 .c-job-title-budget input{
     width:49%;
 }
+
+.location{
+    width:100%;
+}
+
+.location input {
+    width: 49%;
+}
