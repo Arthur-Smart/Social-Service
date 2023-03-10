@@ -20,7 +20,7 @@ function CreateJob() {
                     <p className='text-zinc-500 text-lg ml-2'>Countrywide</p>
                  </div>
             </div>
-            <div className='description px-3 pb-2'>
+            <div className='c-job-description px-3 pb-2'>
                 <textarea className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500' placeholder='Job description'></textarea>
             </div>
         </div>
