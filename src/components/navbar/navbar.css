@@ -10,10 +10,44 @@
 }
 
 .left-nav{
-    flex:3;
+    flex:2;
     font-family: 'Poppins', sans-serif;
 }
 
 .right-nav{
-    flex:2;
+    flex:3;
+}
+
+
+
+.notifications{
+    position: relative;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+}
+
+.nav-icons {
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.num-of-messages{
+    position:absolute;
+    top:-5px;
+    right:-10px;
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(236, 2, 2);
+}
+
+.message{
+    margin-left: 2px;
 }
