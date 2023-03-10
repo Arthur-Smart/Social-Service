@@ -23,6 +23,10 @@ function CreateJob() {
             <div className='c-job-description px-3 pb-2'>
                 <textarea className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500' placeholder='Job description'></textarea>
             </div>
+            <div className='add-skil'>
+                <p>Specify mandatory skill requirements</p>
+                <input type='text' placeholder='Type skill requirement'/>
+            </div>
         </div>
     </div>
   )
