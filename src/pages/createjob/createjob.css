@@ -1,3 +1,11 @@
 .create-job{
     width:100%;
 }
+
+.c-job-title-budget{
+    width:100%;
+}
+
+.c-job-title-budget input{
+    width:49%;
+}
