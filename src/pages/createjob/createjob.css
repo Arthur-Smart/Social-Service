@@ -30,3 +30,23 @@
     max-height: 25vh;
     min-height: 25vh;
 }
+
+.add-skill{
+    width:100%;
+}
+
+.title-add{
+    width:100%;
+}
+
+.title-add input{
+    width:80%;
+}
+
+.title-add button {
+    width: 20%;
+}
+
+.skill-text{
+    width:fit-content;
+}
