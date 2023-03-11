@@ -57,8 +57,8 @@ function JobPage() {
         {open && (
             <div className='apply flex flex-col items-center justify-center'>
             <div className='apply-wrapper rounded-md bg-white p-3 flex flex-col items-center justify-center'>
-                <input className='py-2 px-2 border-2 border-indigo-200 outline-0 text-zinc-500 w-full' type='text' placeholder='Enter email'/>
-                <input className='py-2 px-2 border-2 border-indigo-200  outline-0 text-zinc-500 w-full mt-2' type='text' placeholder='Enter phone number'/>
+                <input className='py-2 px-2  border-indigo-200 outline-0 text-zinc-500 w-full' type='text' placeholder='Enter email'/>
+                <input className='py-2 px-2  border-indigo-200  outline-0 text-zinc-500 w-full mt-2' type='text' placeholder='Enter phone number'/>
                 <textarea className='apply-textarea py-2 px-2 border-2 border-indigo-200  outline-0 text-zinc-500 mt-2' placeholder='Write a proposal'></textarea>
                 <input type='file' id='upload' style={{display:'none'}}/>
                 <div className='w-full items-start flex items-center py-2 justify-between'>
