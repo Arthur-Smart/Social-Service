@@ -13,7 +13,7 @@ function JobPage() {
                     </div>
                         <p className='text-amber-500 text-lg font-medium mt-4'>Mobile app development</p>
                         <p className='text-zinc-500 font-semibold'>Published 4 minutes ago</p>
-                        <p>Nyeri</p>
+                        <p><i class="fa-solid fa-location-dot"></i> Nyeri</p>
                 </div>
                 <div className='j-p-description p-3'>
                     <p>I have a website created in python, Django ( its an api) and I need help adding a payment system. I had hired developer before who ad started implementing the system but he is having a little trouble integrating some of the parts. Upon hire, I will link you to the developer so that he can explain in details, whats needed.
@@ -29,10 +29,10 @@ function JobPage() {
                 </div>
 
                 <div className='j-p-payment p-3'>
-                    <p>Bugeted payment</p>
-                    <p>Kes 20,000</p>
+                    <p className='font-medium text-zinc-500'>Bugeted payment</p>
+                    <p className='text-zinc-500'><i class="fa-solid fa-coins"></i> Kes 20,000</p>
                 </div>
-                <button className='ml-3'>Apply</button>
+                <button className='ml-3 apply-btn py-3 px-4 rounded-full'>Apply</button>
             </div>
         </div>
     </div>
