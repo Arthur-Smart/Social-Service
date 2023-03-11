@@ -6,12 +6,13 @@ import CreateJob from './pages/createjob/CreateJob';
 import Engagement from './pages/engagement/Engagement';
 import Engagements from './pages/engagements/Engagements';
 import Home from './pages/home/Home';
+import JobPage from './pages/jobpage/JobPage';
 
 function App() {
   return (
     <div className="App">
        <Navbar/>
-       <CreateJob/>
+       <JobPage/>
        <Footer/>
     </div>
   );
