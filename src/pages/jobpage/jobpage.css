@@ -31,6 +31,11 @@
     background-color: #3e4396;
 }
 
+.apply-btn:disabled{
+    cursor:not-allowed;
+    background-color: rgba(128, 128, 128, 0.253);
+}
+
 .similar-jobs{
     width:100%;
     background-color: #3e4396;
@@ -65,4 +70,8 @@
     height:30vh;
     max-height:30vh;
     min-height:30vh;
+}
+
+.close-apply-btn{
+    width:50%
 }
