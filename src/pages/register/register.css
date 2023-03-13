@@ -1,0 +1,22 @@
+.register{
+    position: fixed;
+    top:0;
+    left:0;
+    height:100vh;
+    width:100vw;
+    background-color: rgba(0, 0, 0, 0.623);
+}
+
+.register-wrapper{
+    width:30%;
+}
+
+.join-line{
+    width:40%;
+    height:2px;
+    border-width: 1px;
+}
+
+.j-inputs, .google-btn{
+    border-width: 1px;
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import Register from '../../pages/register/Register'
 import './navbar.css'
 
 function Navbar() {
@@ -21,6 +22,7 @@ function Navbar() {
             </div>
             
         </div>
+        <Register/>
     </div>
   )
 }

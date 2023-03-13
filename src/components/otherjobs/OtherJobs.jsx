@@ -3,7 +3,7 @@ import './otherjobs.css'
 
 function OtherJobs() {
   return (
-    <div className='otherjobs flex flex-col items-center justify-center cursor-pointer'>
+    <div className='otherjobs rounded-md flex flex-col items-center justify-center cursor-pointer'>
     <div className='flex items-center justify-between p-2 w-full'>
         <p className='text-amber-500 text-lg font-medium'>Mobile app development</p>
         <p className='text-zinc-500'><i class="fa-solid fa-coins"></i> Kes 21000</p> 

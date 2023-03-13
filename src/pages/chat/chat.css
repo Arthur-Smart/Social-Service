@@ -1,0 +1,30 @@
+.chat{
+    width:100%;
+}
+
+.chat-with{
+    width: 80%;
+}
+
+.chat-wrapper{
+    width:80%;
+    border-width: 1px;
+}
+
+.sender{
+    width: fit-content;
+}
+
+.owner{
+    display: flex;
+    align-self: flex-end;
+    width: fit-content;
+}
+
+.msg-input{
+    border-width: 1px;
+}
+
+.msg-send-btn{
+    width:100px;
+}

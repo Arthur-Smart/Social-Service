@@ -3,7 +3,7 @@ import './servicecard.css'
 
 function ServiceCard({item}) {
   return (
-    <div className='service-card border-2 cursor-pointer'>
+    <div className='service-card border-gray-200 s-card-border cursor-pointer'>
         <img className='service-img' src={item.img} alt='skills hub'/>
         <div className='name-profile flex items-center p-2'>
             <img className='service-owner-pic' src={item.profilePic} alt='skills hub'/>

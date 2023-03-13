@@ -3,7 +3,7 @@ import './singlejob.css'
 
 function SingleJob() {
   return (
-    <div className='singlejob border-2 p-2'>
+    <div className='singlejob border-gray-200 single-j-border p-2'>
         <div className='flex flex-col '>
             <div className='flex'>
                 <img src={require('../../assets/mainbg.jpg')} alt = "Skillshub"/>

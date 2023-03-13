@@ -1,0 +1,32 @@
+.message{
+    width:100%;
+    border-bottom:1px solid rgba(128, 128, 128, 0.247);    
+}
+
+.message:nth-child(2n){
+    background-color: #3e429628;
+}
+
+.msg-owner{
+    width:20%;
+}
+
+.msg-desc{
+    width:60%;
+}
+
+.msg-time-btn{
+    width:20%;
+}
+
+
+
+.msg-active{
+    display: flex ;
+}
+
+
+
+.msg-icon{
+    font-size: 20px;
+}
