@@ -8,7 +8,7 @@ function Reviews({serviceId}) {
      const { isLoading, error, data, refetch } = useQuery({
         queryKey: ['reviews'],
         queryFn: () =>
-        axios(`http://localhost:8800/api/service/single/${serviceId}`).then((res) => {
+        axios(`http://localhost:8800/api/reviews/${serviceId}`).then((res) => {
             return res.data;
       })
   })
@@ -29,8 +29,9 @@ function Reviews({serviceId}) {
                     <option value='4'>4</option>
                   </select>                  
               </div> 
-               )}             
-                <Review/>
+               )}
+               {isLoading ? "Loading" : error ? "Something went wrong" : data.map((review) => <Review key={review._id} review={review}/>)}             
+                
               </div>
   )
 }
