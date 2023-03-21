@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import axios from "axios"
+import moment from "moment"
 import './jobpage.css'
 
 function JobPage() {
@@ -40,6 +41,7 @@ function JobPage() {
       })
   })
 
+
   return (
     <div className='jobpage flex flex-col items-center justify-center'>
         <div className='container flex items-center justify-center mt-10'>
@@ -53,7 +55,7 @@ function JobPage() {
                         <Link to='/message/7'><p className='text-indigo-700 text-2xl cursor-pointer' title='Chat with me'><i class="fa-solid fa-comments"></i></p></Link>
                     </div>
                         <p className='text-amber-500 text-lg font-medium mt-4'>{data?.title}</p>
-                        <p className='text-zinc-500 font-semibold'>Published {data?.createdAt} ago</p>
+                        <p className='text-zinc-500 font-semibold'>Published {moment(data?.createdAt).fromNow()}</p>
                         <p><i class="fa-solid fa-location-dot"></i> {data?.location}</p>
                 </div>
                 <div className='j-p-description p-3'>

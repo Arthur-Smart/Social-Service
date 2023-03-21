@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from "moment"
 import './otherjobs.css'
 
 function OtherJobs({item}) {
@@ -13,7 +14,7 @@ function OtherJobs({item}) {
     </div>
     <div className='flex items-center justify-between p-2 w-full'>
         <p className='font-medium'><i class="fa-solid fa-location-dot"></i> {item?.location}</p>
-        <p className='text-zinc-500 font-semibold'>Published {item?.createdAt} ago</p>
+        <p className='text-zinc-500 font-semibold'>Published {moment(item?.createdAt).fromNow()}</p>
     </div>
     </div>
   )
