@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import OtherJobs from '../../components/otherjobs/OtherJobs'
+import {Link} from 'react-router-dom'
 import './jobpage.css'
 
 function JobPage() {
@@ -14,7 +15,7 @@ function JobPage() {
                             <img className='j-p-image' src={require('../../assets/mainbg.jpg')} alt='skill hub'/>
                             <p className='ml-2 text-zinc-600 font-semibold'>John Mwaniki</p>
                         </div>
-                        <p className='text-indigo-700 text-2xl cursor-pointer' title='Chat with me'><i class="fa-solid fa-comments"></i></p>
+                        <Link to='/message/7'><p className='text-indigo-700 text-2xl cursor-pointer' title='Chat with me'><i class="fa-solid fa-comments"></i></p></Link>
                     </div>
                         <p className='text-amber-500 text-lg font-medium mt-4'>Mobile app development</p>
                         <p className='text-zinc-500 font-semibold'>Published 4 minutes ago</p>

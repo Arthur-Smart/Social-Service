@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './singlejob.css'
 
 function SingleJob() {
@@ -15,7 +16,7 @@ function SingleJob() {
             </div>
             <div className='mt-4 flex items-center justify-between'>
                 <p className='text-amber-500 text-lg'><i class="fa-solid fa-location-dot"></i> Nairobi</p>
-                <button className='job-post-btn py-1 px-10 text-white'>More</button>
+               <Link to='/job/5'> <button className='job-post-btn py-1 px-10 text-white'>More</button></Link>
             </div>
         </div>
     </div>

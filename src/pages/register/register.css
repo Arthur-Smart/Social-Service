@@ -20,3 +20,17 @@
 .j-inputs, .google-btn{
     border-width: 1px;
 }
+
+.facebook-btn{
+background-color: rgb(50, 50, 117);
+}
+
+.google-btn img{
+    height:30px;
+    height:30px;
+}
+
+.facebook-btn img{
+    height: 30px;
+    height: 30px;
+}
