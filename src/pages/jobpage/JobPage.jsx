@@ -1,10 +1,31 @@
 import React, {useState} from 'react'
 import OtherJobs from '../../components/otherjobs/OtherJobs'
 import {Link} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import { useQuery } from '@tanstack/react-query'
+import axios from "axios"
 import './jobpage.css'
 
 function JobPage() {
     const [open, setOpen] = useState(false)
+      const {id} = useParams();
+
+      const { isLoading, error, data, refetch } = useQuery({
+        queryKey: ['service'],
+        queryFn: () =>
+        axios(`http://localhost:8800/api/jobs/single/${id}`).then((res) => {
+        return res.data;
+      })
+  })
+
+  const { isLoading:isLoadingUser, error:errorUser, data:dataUser} = useQuery({
+    queryKey: ['user'],
+    queryFn: () =>
+      axios(`http://localhost:8800/api/user/${data.userId}`).then((res) => {
+        return res.data;
+      })
+  })
+
   return (
     <div className='jobpage flex flex-col items-center justify-center'>
         <div className='container flex items-center justify-center mt-10'>
@@ -12,31 +33,31 @@ function JobPage() {
                 <div className='title-project p-3'>
                     <div className='flex items-center justify-between'>
                         <div className='flex items-center'>
-                            <img className='j-p-image' src={require('../../assets/mainbg.jpg')} alt='skill hub'/>
-                            <p className='ml-2 text-zinc-600 font-semibold'>John Mwaniki</p>
+                            <img className='j-p-image' src={dataUser?.userImage} alt='skill hub'/>
+                            <p className='ml-2 text-zinc-600 font-semibold'>{dataUser?.name}</p>
                         </div>
                         <Link to='/message/7'><p className='text-indigo-700 text-2xl cursor-pointer' title='Chat with me'><i class="fa-solid fa-comments"></i></p></Link>
                     </div>
-                        <p className='text-amber-500 text-lg font-medium mt-4'>Mobile app development</p>
-                        <p className='text-zinc-500 font-semibold'>Published 4 minutes ago</p>
-                        <p><i class="fa-solid fa-location-dot"></i> Nyeri</p>
+                        <p className='text-amber-500 text-lg font-medium mt-4'>{data?.title}</p>
+                        <p className='text-zinc-500 font-semibold'>Published {data?.createdAt} ago</p>
+                        <p><i class="fa-solid fa-location-dot"></i> {data?.location}</p>
                 </div>
                 <div className='j-p-description p-3'>
-                    <p className='text-zinc-500'>I have a website created in python, Django ( its an api) and I need help adding a payment system. I had hired developer before who ad started implementing the system but he is having a little trouble integrating some of the parts. Upon hire, I will link you to the developer so that he can explain in details, whats needed.
-                        I will provide the code that I want adding the payment system upon hire. Thanks.</p>
+                    <p className='text-zinc-500'>{data?.description}</p>
                 </div>
                 <div className='j-p-skills p-3'>
                     <p className='text-zinc-600 font-semibold'>Skills required</p>
                     <div className='flex items-center gap-2'>
-                        <p className='skill-text text-zinc-500 rounded-full border-2 border-amber-500 py-2 px-5'>Python</p>
-                        <p className='skill-text text-zinc-500 rounded-full border-2 border-amber-500 py-2 px-5'>JavaScript</p>
-                        <p className='skill-text text-zinc-500 rounded-full border-2 border-amber-500 py-2 px-5'>SQL</p>
+                    {data.skills.map((skill) => (
+                        <p className='skill-text text-zinc-500 rounded-full border-2 border-amber-500 py-2 px-5'>{skill}</p>
+                    ))}
+                        
                     </div>
                 </div>
 
                 <div className='j-p-payment p-3'>
                     <p className='font-medium text-zinc-500'>Bugeted payment</p>
-                    <p className='text-zinc-500'><i class="fa-solid fa-coins"></i> Kes 20,000</p>
+                    <p className='text-zinc-500'><i class="fa-solid fa-coins"></i> Kes {data?.budget}</p>
                 </div>
                 <button onClick={() => setOpen(true)} className='ml-3 apply-btn py-3 px-4 rounded-full text-white'>Apply</button>
             </div>

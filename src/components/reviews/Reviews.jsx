@@ -11,9 +11,9 @@ function Reviews({serviceId}) {
         axios(`http://localhost:8800/api/reviews/${serviceId}`).then((res) => {
             return res.data;
       })
-  })
+  });
   return (
-   <div className='reviews'>
+   <div className='reviews w-full'>
               <div className='flex items-center justify-between mt-2 '>
                   <p className='text-zinc-500 text-xl font-bold'>Reviews</p>
                   <button onClick={() => setChangeText(!changeText)} className={changeText ? ' border-2 py-3 px-6 rounded-full review-btn text-white' : ' border-2 py-3 px-6 rounded-full hover:bg-amber-600 hover:border-amber-600 hover:text-white' }>{changeText ? 'Send Review' : 'Give Review'}</button>
@@ -30,7 +30,10 @@ function Reviews({serviceId}) {
                   </select>                  
               </div> 
                )}
+               <div className='w-full'>
                {isLoading ? "Loading" : error ? "Something went wrong" : data.map((review) => <Review key={review._id} review={review}/>)}             
+
+               </div>
                 
               </div>
   )
