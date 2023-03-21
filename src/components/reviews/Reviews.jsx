@@ -1,8 +1,17 @@
 import React, {useState} from 'react'
 import Review from '../review/Review'
+import { useQuery } from '@tanstack/react-query'
+import axios from "axios"
 
-function Reviews() {
+function Reviews({serviceId}) {
      const [changeText, setChangeText] = useState(false)
+     const { isLoading, error, data, refetch } = useQuery({
+        queryKey: ['reviews'],
+        queryFn: () =>
+        axios(`http://localhost:8800/api/service/single/${serviceId}`).then((res) => {
+            return res.data;
+      })
+  })
   return (
    <div className='reviews'>
               <div className='flex items-center justify-between mt-2 '>
@@ -21,10 +30,6 @@ function Reviews() {
                   </select>                  
               </div> 
                )}             
-                <Review/>
-                <Review/>
-                <Review/>
-                <Review/>
                 <Review/>
               </div>
   )

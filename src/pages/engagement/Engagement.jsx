@@ -11,7 +11,6 @@ function Engagement() {
  
   const {id} = useParams();
  
-
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ['service'],
     queryFn: () =>
@@ -64,7 +63,7 @@ function Engagement() {
                   <p className='border-2 border-amber-500 rounded-full py-2 px-7 ml-2'>PHP</p>
                 </div>
               </div>
-              {<Reviews/>}
+              {<Reviews serviceId={id}/>}
             </div>
             <div className='engagement-right justify-center flex '>
                   <div className='engagement-info border-2 p-2'>
