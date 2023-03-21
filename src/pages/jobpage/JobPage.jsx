@@ -8,18 +8,32 @@ import './jobpage.css'
 
 function JobPage() {
     const [open, setOpen] = useState(false)
+    const [filterdData, setFilteredData] = useState([])
       const {id} = useParams();
 
       const { isLoading, error, data, refetch } = useQuery({
-        queryKey: ['service'],
+        queryKey: ['singleJob'],
         queryFn: () =>
         axios(`http://localhost:8800/api/jobs/single/${id}`).then((res) => {
         return res.data;
       })
   })
 
+    const { isLoading:isLoadingAll, error:errorAll, data:dataAll } = useQuery({
+        queryKey: ['allJobs'],
+        queryFn: () =>
+        axios(`http://localhost:8800/api/jobs/`).then((res) => {
+        return res.data;
+      })
+  })
+
+  const filterData = dataAll?.filter((d) => d._id !==data._id && d.userId === data.userId);
+  
+
+  //console.log(dataAll)
+
   const { isLoading:isLoadingUser, error:errorUser, data:dataUser} = useQuery({
-    queryKey: ['user'],
+    queryKey: ['jobuser'],
     queryFn: () =>
       axios(`http://localhost:8800/api/user/${data.userId}`).then((res) => {
         return res.data;
@@ -48,7 +62,7 @@ function JobPage() {
                 <div className='j-p-skills p-3'>
                     <p className='text-zinc-600 font-semibold'>Skills required</p>
                     <div className='flex items-center gap-2'>
-                    {data.skills.map((skill) => (
+                    {data?.skills.map((skill) => (
                         <p className='skill-text text-zinc-500 rounded-full border-2 border-amber-500 py-2 px-5'>{skill}</p>
                     ))}
                         
@@ -66,11 +80,9 @@ function JobPage() {
         {/*Same clients job*/}
         <div className='similar-jobs mt-10 flex items-center justify-center py-2'>
             <div className='container'>
-                <p className='text-white  text-lg similar-title mt-4'>Other job posting by John Mwaniki | <span className='text-amber-500 font-bold'>20 other jobs</span></p>
+                <p className='text-white  text-lg similar-title mt-4'>Other job posting by {dataUser?.name} | <span className='text-amber-500 font-bold'>{filterData?.length} other jobs</span></p>
                 <div className='other-jobs-wrapper flex flex-wrap items-center gap-2 justify-center'>
-                    <OtherJobs/>
-                    <OtherJobs/>
-                    <OtherJobs/>
+                    {filterData?.map((f) => <OtherJobs key={f._id} item={f}/>)}
                 </div>
             </div>
         </div>
