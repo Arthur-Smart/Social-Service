@@ -34,18 +34,18 @@ function CreateJob() {
         </div>
         <div className='container bg-gray-100 py-2'>
             <div className='c-job-title-budget flex items-center justify-between px-3 pb-2'>
-                 <input className='py-2 px-2  outline-1  outline-amber-100 text-zinc-500' type='text' placeholder='Type title'/>
-                <input  className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500' type='text' placeholder='Enter bugeted amout'/>
+                 <input className='py-2 px-2  outline-1  outline-amber-100 text-zinc-500' type='text' onChange={(e) => setTitle(e.target.value)} placeholder='Type title'/>
+                <input  className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500' type='number' onChange={(e) => setBudget(e.target.value)} placeholder='Enter bugeted amount'/>
             </div>
             <div className='location flex items-center gap-6 px-3 pb-2'>
-                 <input className='py-2 px-2  outline-1  outline-amber-100 text-zinc-500' type='text' placeholder='Type Location'/>
+                 <input className='py-2 px-2  outline-1  outline-amber-100 text-zinc-500' type='text' onChange={(e) => setLocation(e.target.value)} placeholder='Type Location'/>
                  <div className='flex items-center countrywide'>
                     <input  className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500' type='checkbox' placeholder='Enter bugeted amout'/>
                     <p className='text-zinc-500 text-lg ml-2'>Countrywide</p>
                  </div>
             </div>
             <div className='c-job-description px-3 pb-2'>
-                <textarea className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500' placeholder='Job description'></textarea>
+                <textarea className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500' onChange={(e) => setDescription(e.target.value)} placeholder='Job description'></textarea>
             </div>
             <div className='add-skill px-3'>
                 <p>Specify mandatory skill requirements</p>
