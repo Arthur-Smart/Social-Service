@@ -6,6 +6,18 @@
     width:100%;
 }
 
+.phone-isnegotiable-inputs{
+    width:100%;
+}
+
+.phone-isnegotiable-inputs-input{
+    width:49%;
+}
+
+.is-negotiable{
+    width: 49%;
+}
+
 .skill-category{
     width:100%;
 }

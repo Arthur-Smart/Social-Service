@@ -10,12 +10,24 @@
     width:49%;
 }
 
-.location{
+.location-phone{
     width:100%;
 }
 
-.location input {
+.location-phone input {
     width: 49%;
+}
+
+.freelance-negotiable{
+    width:100%;
+}
+
+.fleelance{
+    width:50%;
+}
+
+.negotiable{
+    width:50%;
 }
 
 .c-job-description{

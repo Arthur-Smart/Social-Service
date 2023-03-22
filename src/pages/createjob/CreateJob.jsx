@@ -4,27 +4,39 @@ import axios from 'axios'
 
 function CreateJob() {
     const [skill, setSkill] = useState('')
+    //const [isChecked, setIsChecked] = useState(false)
 
     const [skills, setSkills] = useState([]);
     const [title, setTitle] = useState('')
     const [budget, setBudget] = useState()
-    const [isNegotiable, setIsNegotiable] = useState(true)
+    const [isNegotiable, setIsNegotiable] = useState(false)
     const [location, setLocation] = useState('')
     const [freelance, setFreelance] = useState(false)
     const [description, setDescription] = useState('')
-    const [phone, setPhone] = useState('')
+    const [phone, setPhone] = useState('0758869958')
 
     const handleAddSkill = (e) => {
         setSkills((prev) => [...prev, skill])
     }
 
     const handleCreate = async() => {
-         await axios.post('http://localhost:8800/api/jobs/', {
+        const res = await axios.post('http://localhost:8800/api/jobs/', {
             skills, title, budget, isNegotiable, location, freelance, description, phone
         },{withCredentials:true}); 
+
+        console.log(res)
     }
 
-    console.log(skills)
+    const handleCheckboxChange = (e) =>{
+        setFreelance(e.target.checked)
+    }
+    const handleCheckboxChangeNegotiate = (e) =>{
+        setIsNegotiable(e.target.checked)
+    }
+
+    
+
+    console.log(freelance)
 
       return (
        <div className='create-job flex flex-col items-center justify-center '>
@@ -37,12 +49,9 @@ function CreateJob() {
                  <input className='py-2 px-2  outline-1  outline-amber-100 text-zinc-500' type='text' onChange={(e) => setTitle(e.target.value)} placeholder='Type title'/>
                 <input  className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500' type='number' onChange={(e) => setBudget(e.target.value)} placeholder='Enter bugeted amount'/>
             </div>
-            <div className='location flex items-center gap-6 px-3 pb-2'>
+            <div className='location-phone flex items-center gap-6 px-3 pb-2'>
                  <input className='py-2 px-2  outline-1  outline-amber-100 text-zinc-500' type='text' onChange={(e) => setLocation(e.target.value)} placeholder='Type Location'/>
-                 <div className='flex items-center countrywide'>
-                    <input  className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500' type='checkbox' placeholder='Enter bugeted amout'/>
-                    <p className='text-zinc-500 text-lg ml-2'>Countrywide</p>
-                 </div>
+                 <input className='py-2 px-2  outline-1  outline-amber-100 text-zinc-500' type='text' onChange={(e) => setPhone(e.target.value)} placeholder='Enter Whatsapp Number'/>
             </div>
             <div className='c-job-description px-3 pb-2'>
                 <textarea className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500' onChange={(e) => setDescription(e.target.value)} placeholder='Job description'></textarea>
@@ -62,9 +71,28 @@ function CreateJob() {
                    ))} 
                 </div>
             </div>
+            <div className='flex  items-center freelance-negotiable px-3'>
+                <div className='negotiable flex items-center'>
+                     <input  className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500'
+                        onChange={handleCheckboxChangeNegotiate}
+                        type='checkbox'
+                        checked={isNegotiable}
+                        placeholder='Enter bugeted amout'/>
+                    <p className='text-zinc-500 text-lg ml-2'>Price is negotiable</p>
+                </div>
+                <div className='fleelance flex items-center'>
+                     <input  className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500'
+                        onChange={handleCheckboxChange}
+                        type='checkbox'
+                        checked={freelance}
+                        placeholder='Enter bugeted amout'/>
+                    <p className='text-zinc-500 text-lg ml-2'>Can freelance</p>
+                </div>
+                   
+                 </div>
         </div>
-        <div className='container'>
-            <button onClick={() => handleCreate()} className='bg-teal-500'>Publish</button>
+        <div className='container py-2'>
+            <button onClick={() => handleCreate()} className='bg-indigo-800 py-2 px-4 rounded-full text-white hover:bg-indigo-700'>Publish</button>
         </div>
     </div>
   )
