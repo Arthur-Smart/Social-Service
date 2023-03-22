@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
 import Review from '../review/Review'
-import { useMutation, useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import axios from "axios"
 
 function Reviews({serviceId}) {
      //const [changeText, setChangeText] = useState(false)
      const [description, setDescription] = useState('')
-
+     const queryClient = useQueryClient() 
      const { isLoading, error, data, refetch } = useQuery({
         queryKey: ['reviews'],
         queryFn: () =>
@@ -17,7 +17,10 @@ function Reviews({serviceId}) {
 
   const mutation = useMutation({
     mutationFn: (review) => {
-      return axios.post('http://localhost:8800/api/reviews', review)
+      return axios.post('http://localhost:8800/api/reviews',review, {withCredentials:true})
+    },
+    onSuccess:() => {
+      queryClient.invalidateQueries(["reviews"])
     }
   });
 
@@ -25,9 +28,10 @@ function Reviews({serviceId}) {
 
   const handleSubmit = async () => {
     //console.log(userId)
-   const res = await axios.post('http://localhost:8800/api/reviews/', {serviceId, description},
-   {withCredentials:true});
-    console.log(res);
+   //const res = await axios.post('http://localhost:8800/api/reviews/', {serviceId, description},
+   //{withCredentials:true});
+    //console.log(res);
+    mutation.mutate({serviceId, description})
   }
 
   //({userId, serviceId, userReview})
