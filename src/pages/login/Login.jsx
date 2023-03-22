@@ -19,6 +19,7 @@ function Login({setOpenLoginModel}) {
             console.log(err)
         }
         setOpenLoginModel(false)
+        console.log(JSON.parse(localStorage.getItem('currentUser')))
     }
   return (
     <div className='login flex flex-col items-center justify-center'>
@@ -44,8 +45,8 @@ function Login({setOpenLoginModel}) {
                 <div className='join-line border-gray-200'></div>
             </div>
             <div className='flex flex-col items-center w-full px-2'>
-                <input autoComplete='off' className='j-inputs border-2 rounded-full outline-0 py-3 px-2 w-full mt-4' type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder='Enter Email'/>
-                <input autoComplete='off' className='j-inputs border-2 rounded-full outline-0 py-3 px-2 w-full mt-4' type='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter password'/>
+                <input className='j-inputs border-2 rounded-full outline-0 py-3 px-2 w-full mt-4' type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder='Enter Username'/>
+                <input className='j-inputs border-2 rounded-full outline-0 py-3 px-2 w-full mt-4' type='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter password'/>
             </div>
             <div className='px-2 py-3 w-full'>
                 <button onClick={() => handleLogin()} className='py-3 px-2 rounded-full bg-amber-500 w-full text-white'>Login</button>

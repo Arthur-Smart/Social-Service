@@ -1,6 +1,7 @@
 import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 import axios from "axios"
+import moment from "moment"
 import './review.css'
 
 function Review({review}) {
@@ -18,7 +19,7 @@ function Review({review}) {
       <div className='ml-2 bg-gray-100 p-2 rounded-md'>
         <p className='font-bold text-zinc-700'>{data?.name}</p>
         <p className='text-zinc-600'>{review?.description}</p>
-        <p className='text-zinc-600'>{review?.createdAt}</p>
+        <p className='text-zinc-600'>{moment(review?.createdAt).fromNow()}</p>
       </div>
     </div>
   )

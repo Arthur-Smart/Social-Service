@@ -31,23 +31,18 @@ function Register({setOpenRegModel}) {
             <div>
                 <p className='font-bold text-xl text-zinc-500 py-2'>Join SkillsHub</p>
             </div>
-            <div className='w-full px-2 py-3'>
-                <div className='w-full facebook-btn py-3 px-2 rounded-full flex items-center cursor-pointer'>
-                    <img src={require('../../assets/facebook.png')} alt='Skills hub'/>
-                    <p className='ml-2 text-white'>Join using facebook</p>
-                </div>
-
-                <div className='border-gray-200 google-btn w-full mt-2 py-3 px-2  rounded-full flex items-center cursor-pointer'>
-                     <img src={require('../../assets/google.png')} alt='Skills hub'/>
-                    <p className='ml-2 text-zinc-500'>Join using Google</p>
+            <div className='separator bg-zinc-300'></div>
+            <div className='w-full flex flex-col items-center justify-center px-2 py-3'>
+                <p className='text-xl text-zinc-400 '>Upload profile picture</p>
+                <div className='user-image'>
+                    <img src={require('../../assets/mainbg.jpg')} alt=''/>
+                    <div className='upload-Image cursor-pointer'>
+                        <p><i class="fa-solid fa-photo-film fa-bounce"></i></p>
+                    </div>
                 </div>
             </div>
 
-            <div className=' flex items-center justify-between w-full px-2'>
-                <div className='join-line border-gray-200'></div>
-                    <p>OR</p>
-                <div className='join-line border-gray-200'></div>
-            </div>
+            
             <div className='flex flex-col items-center w-full px-2'>
                 <input autoComplete='off' name="name" onChange={handleChange} className='j-inputs border-2 rounded-full outline-0 py-3 px-2 w-full mt-4' type='text' placeholder='Enter name'/>
                 <input autoComplete='off' name="email" onChange={handleChange} className='j-inputs border-2 rounded-full outline-0 py-3 px-2 w-full mt-4' type='email' placeholder='Enter Email'/>
