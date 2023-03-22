@@ -3,6 +3,12 @@ import axios from "axios"
 import './register.css'
 
 function Register({setOpenRegModel}) {
+    const [file, setFile] = useState(null)
+    const [image, setImage] = useState('')
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
     const [user, setUser] = useState({
         name:"",
         email:"",
@@ -35,18 +41,19 @@ function Register({setOpenRegModel}) {
             <div className='w-full flex flex-col items-center justify-center px-2 py-3'>
                 <p className='text-xl text-zinc-400 '>Upload profile picture</p>
                 <div className='user-image'>
-                    <img src={require('../../assets/mainbg.jpg')} alt=''/>
-                    <div className='upload-Image cursor-pointer'>
-                        <p><i class="fa-solid fa-photo-film fa-bounce"></i></p>
-                    </div>
+                    {image ? <img src={URL.createObjectURL(image)} alt=''/> : <img src={require('../../assets/avatar.jpg')} alt=''/>}
+                    <label htmlFor='image-id' className='upload-Image flex items-center justify-center cursor-pointer bg-indigo-600'>
+                        <p><i class="fa-solid fa-photo-film fa-bounce fa-xl text-white"></i></p>
+                    </label>
+                    <input onChange={(e) => setImage(e.target.files[0])} style={{display:'none'}} type='file' id='image-id'/>
                 </div>
             </div>
 
             
             <div className='flex flex-col items-center w-full px-2'>
-                <input autoComplete='off' name="name" onChange={handleChange} className='j-inputs border-2 rounded-full outline-0 py-3 px-2 w-full mt-4' type='text' placeholder='Enter name'/>
-                <input autoComplete='off' name="email" onChange={handleChange} className='j-inputs border-2 rounded-full outline-0 py-3 px-2 w-full mt-4' type='email' placeholder='Enter Email'/>
-                <input autoComplete='off' name="password" onChange={handleChange} className='j-inputs border-2 rounded-full outline-0 py-3 px-2 w-full mt-4' type='password' placeholder='Enter password'/>
+                <input autoComplete='off'  onChange={(e) => setName(e.target.value)} className='j-inputs border-2 rounded-full outline-0 py-3 px-2 w-full mt-4' type='text' placeholder='Enter name'/>
+                <input autoComplete='off'  onChange={(e) => setEmail(e.target.value)} className='j-inputs border-2 rounded-full outline-0 py-3 px-2 w-full mt-4' type='email' placeholder='Enter Email'/>
+                <input autoComplete='off'  onChange={(e) => setPassword(e.target.value)} className='j-inputs border-2 rounded-full outline-0 py-3 px-2 w-full mt-4' type='password' placeholder='Enter password'/>
             </div>
             <div className='px-2 py-3 w-full'>
                 <button onClick={() =>handleRegister()} className='py-3 px-2 rounded-full bg-amber-500 w-full text-white'>Join</button>
