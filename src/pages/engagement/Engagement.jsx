@@ -33,7 +33,7 @@ function Engagement() {
        {isLoading ? "Loading" : error ? "Something went long" : <div className='container flex justify-between  mt-10'>
             <div className='engagement-left'>
               <div className='engagement-desc'>
-                  <p className='font-bold text-2xl text-zinc-500'>{data?.shortDescription}</p>
+                  <p className='font-bold text-xl text-zinc-500'>{data?.title}</p>
                   {isLoadingUser ? 'Loading' : errorUser ? 'Something went wrong' : (<div className='flex items-center mt-2 border-2 p-2'>
                     <img className='engagement-p-pic' src={dataUser?.userImage} />
                     <p className='font-bold text-black ml-2 font-bold text-lg'>{dataUser?.names}</p>

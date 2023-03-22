@@ -52,7 +52,7 @@ function JobPage() {
                             <img className='j-p-image' src={dataUser?.userImage} alt='skill hub'/>
                             <p className='ml-2 text-zinc-600 font-semibold'>{dataUser?.name}</p>
                         </div>
-                        <Link to='/message/7'><p className='text-indigo-700 text-2xl cursor-pointer' title='Chat with me'><i class="fa-solid fa-comments"></i></p></Link>
+                        <Link to='/message/7'><p className='text-green-400 text-2xl cursor-pointer' title='Chat with me'><i class="fa-brands fa-square-whatsapp"></i></p></Link>
                     </div>
                         <p className='text-amber-500 text-lg font-medium mt-4'>{data?.title}</p>
                         <p className='text-zinc-500 font-semibold'>Published {moment(data?.createdAt).fromNow()}</p>
