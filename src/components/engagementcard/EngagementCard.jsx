@@ -21,7 +21,7 @@ function EngagementCard({item}) {
             <img className='engagement-p-img cursor-pointer' src={data.userImage} alt='Skills hub'/>
             <div className='ml-2 '>
                 <p className='text-zinc-500 font-medium'>{data.name}</p>
-                <p className='text-amber-500 font-bold text-lg -mt-2 cursor-pointer'>{item.title}</p>
+                <p className='text-amber-500 font-bold text-lg -mt-2 cursor-pointer'>{item.title.substring(0,21)}...</p>
             </div>
         </div>)}
         <div className='p-2'>

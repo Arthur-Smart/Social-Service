@@ -54,14 +54,14 @@ function Engagement() {
               <div className='engagement-about'>
                 <p className='text-zinc-500 text-xl font-bold'>About me</p>
                 <p>{data?.shortDescription}</p>
+                {/*<div className='flex flex-wrap items-center '>
                 <p className='text-zinc-500 text-xl font-bold'>Skills</p>
-                <div className='flex flex-wrap items-center '>
                   <p className='border-2 border-amber-500 rounded-full py-2 px-7'>Python</p>
                   <p className='border-2 border-amber-500 rounded-full py-2 px-7 ml-2'>JavaScript</p>
                   <p className='border-2 border-amber-500 rounded-full py-2 px-7 ml-2'>Java</p>
                   <p className='border-2 border-amber-500 rounded-full py-2 px-7 ml-2'>Golang</p>
                   <p className='border-2 border-amber-500 rounded-full py-2 px-7 ml-2'>PHP</p>
-                </div>
+                </div>*/}
               </div>
               {<Reviews serviceId={id}/>}
             </div>
