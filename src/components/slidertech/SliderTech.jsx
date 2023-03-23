@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react'
-import { skillsData } from '../../data';
+import { techData } from '../../data';
 import SkillCard from '../skillcard/SkillCard';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import AliceCarousel from 'react-alice-carousel';
@@ -7,7 +7,7 @@ import './slidertech.css'
 
 function SliderTech() {
 
- const data = skillsData;
+ const data = techData;
  const items = data.map((item) => (
   <SkillCard key={item.id} item={item} />  
  ))

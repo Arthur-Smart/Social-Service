@@ -6,8 +6,8 @@ function SkillCard({item}) {
   return (
     <Link to='/engagements'><div className='skillcard'>
         <img src={item.img} alt='Skills hub'/>
-        <span className='desc'>{item.desc}</span>
-        <span className='title'>{item.title}</span>
+        <span className='desc'>{item.subHeading}</span>
+        <span className='title'>{item.heading}</span>
     </div>
     </Link>
   )
