@@ -49,42 +49,42 @@ export const techData = [
         subHeading:'Bring it online',
         heading:'Web development',
         category:'web apps',
-        img:require('./assets/capentry.jpg')
+        img:require('./assets/web-dev.jpg')
     },
     {
         id:2,
         subHeading:'Awesome designs',
         heading:'Graphic designing',
         category:'graphic designing',
-        img:require('./assets/building.jpg')
+        img:require('./assets/graphics.jpg')
     },
     {
         id:3,
         subHeading:'Have it in an app',
         heading:'Mobile apps',
         category:'mobile apps',
-        img:require('./assets/plumbing.jpg')
+        img:require('./assets/apps-dev.jpg')
     },
     {
         id:4,
         subHeading:'Beautiful photos',
         heading:'Photography',
         category:'photography',
-        img:require('./assets/barber.jpg')
+        img:require('./assets/photography.jpg')
     },
     {
         id:5,
         subHeading:'Video Mastery',
         heading:'Videography',
         category:'videography',
-        img:require('./assets/pedicure.jpg')
+        img:require('./assets/videography.jpg')
     },
     {
         id:6,
         subHeading:'Money matters',
         heading:'Finance and Auditing',
         category:'finance',
-        img:require('./assets/survey.jpg')
+        img:require('./assets/finance.jpg')
     }
     ,
     {
@@ -92,7 +92,7 @@ export const techData = [
         subHeading:'Solve the issues legaly',
         heading:'Advocate',
         category:'advocate',
-        img:require('./assets/survey.jpg')
+        img:require('./assets/advocate.jpg')
     }
 ]
 
