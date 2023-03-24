@@ -5,6 +5,7 @@ import axios from "axios"
 function UserAccountService({item}) {
   const handleDelete = async () => {
     await axios.delete(`http://localhost:8800/api/service/delete/${item?._id}`, {withCredentials:true})
+    
   }
   return (
     <div className='user-account-services flex flex-col border-zinc-200'>

@@ -15,6 +15,14 @@ function Account() {
       })
   });
 
+  const { isLoading:isLoadingJob, error:errorJob, data:dataJob } = useQuery({
+    queryKey: ['jobaccount'],
+    queryFn: () =>
+      axios(`http://localhost:8800/api/jobs?userId=${user?._id}`).then((res) => {
+        return res.data;
+      })
+  });
+
   
   return (
     <div className='user-account flex flex-col items-center justify-center py-10'>
@@ -27,7 +35,8 @@ function Account() {
         </div>
         
         <div className='container flex flex-wrap items-center justify-center gap-2 pt-5'>
-            {data?.map(item => <UserAccountService item={item}/>)}
+           {/*{data?.map(item => <UserAccountService item={item}/>)}*/}
+            {dataJob?.map(job => <UserAccountJobs job={job}/>)}
             
         </div>
     </div>
