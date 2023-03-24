@@ -1,8 +1,11 @@
 import React from 'react'
 import axios from "axios"
 import './useraccountjobs.css'
+import { useMutation,useQueryClient } from '@tanstack/react-query';
 
 function UserAccountJobs({job}) {
+  const queryClient = useQueryClient() 
+
    const handleDelete = async () => {
     await axios.delete(`http://localhost:8800/api/jobs/single/${job?._id}`, {withCredentials:true})
   }

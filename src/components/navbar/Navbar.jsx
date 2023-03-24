@@ -15,7 +15,7 @@ function Navbar() {
         try {
             axios.post('http://localhost:8800/api/auth/logout', {withCredentials:true});
             localStorage.setItem("currentUser", null)
-            navigate('/')
+            navigate("/")
         } catch (err) {
             console.log(err)
         }
