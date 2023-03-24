@@ -4,7 +4,7 @@ import './useraccountjobs.css'
 
 function UserAccountJobs({job}) {
    const handleDelete = async () => {
-    await axios.delete(`http://localhost:8800/api/service/single/${job?._id}`, {withCredentials:true})
+    await axios.delete(`http://localhost:8800/api/jobs/single/${job?._id}`, {withCredentials:true})
   }
   return (
     <div className='user-account-jobs flex flex-col border-zinc-200'>

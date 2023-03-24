@@ -15,13 +15,16 @@ function Account() {
       })
   });
 
-  const { isLoading:isLoadingJob, error:errorJob, data:dataJob } = useQuery({
+  const { isLoading:isLoadingJob, error:errorJob, data:dataJob, refetch:reftchJob } = useQuery({
     queryKey: ['jobaccount'],
     queryFn: () =>
       axios(`http://localhost:8800/api/jobs?userId=${user?._id}`).then((res) => {
         return res.data;
       })
+     
   });
+
+   reftchJob()
 
   
   return (
