@@ -19,6 +19,7 @@ import {
   QueryClientProvider,
   useQuery,
 } from '@tanstack/react-query'
+import Account from './pages/account/Account';
 
 
 
@@ -73,6 +74,10 @@ function App() {
       {
         path:"/create",
         element:<Create/>
+      },
+       {
+        path:"/account/:id",
+        element:<Account/>
       },
     ]
   },

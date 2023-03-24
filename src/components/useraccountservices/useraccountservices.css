@@ -1,0 +1,28 @@
+.user-account-services{
+    width:30%;
+    height:45vh;
+    border-width:1px;
+}
+
+.u-a-top{
+    width:100%;
+    height:20%;
+    
+}
+
+.u-a-middle {
+    width: 100%;
+    height: 65%;
+    overflow:hidden;
+}
+
+.u-a-middle img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.u-a-j-bottom {
+    width: 100%;
+    height: 15%;
+}

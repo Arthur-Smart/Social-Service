@@ -1,0 +1,14 @@
+.user-account{
+    width:100%;
+}
+
+.account-active-btn{
+    background: transparent;
+    color:black;
+    border:1px solid rgba(0, 24, 130, 0.637);
+}
+
+.account-btns-wrapper{
+    width:100%;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.192);
+}

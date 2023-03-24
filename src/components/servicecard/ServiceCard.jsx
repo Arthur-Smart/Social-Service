@@ -14,7 +14,8 @@ function ServiceCard({item}) {
   });
   return (
     <Link to={`/engagement/${item._id}`}>
-      <div className='service-card border-gray-200 s-card-border cursor-pointer'>
+      {isLoading ? 'Loading...' : error ? 'Something went wrong' : (
+          <div className='service-card border-gray-200 s-card-border cursor-pointer'>
           <img className='service-img' src={item?.image} alt='skills hub'/>
           <div className='name-profile flex items-center p-2'>
               <img className='service-owner-pic' src={data?.userImage} alt='skills hub'/>
@@ -28,6 +29,7 @@ function ServiceCard({item}) {
               <p className='text-white'>Kes {item?.price}</p>
           </div>
       </div>
+      )}      
     </Link>
   )
 }
