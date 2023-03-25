@@ -4,7 +4,7 @@ import './howtoengage.css'
 function HowToEngage() {
   return (
     <div className='engagement flex items-center justify-center pt-10 pb-10'>
-        <div className='container'>
+        <div className='container main-e-wrapper'>
             <div className='engagement-wrapper'>
             <p className='text-3xl font-bold text-zinc-600'>How to create a job skill engagement</p>
             <p className='text-zinc-500'>Follow the three processes below to get started</p>

@@ -16,3 +16,9 @@
     width:40px;
 
 }
+
+@media screen and (max-width:1045px) {
+    .main-e-wrapper {
+        width: 90%;
+    }
+}
