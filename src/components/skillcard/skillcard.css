@@ -39,3 +39,18 @@
     left:15px;
     top:30px;
 }
+
+@media screen and (max-width:854px) {
+    .slider-wrapper {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:850px){
+    .skillcard{
+        width:90%;
+    }
+    .caurosel-div{
+        margin-left: 10%;
+    }
+}

@@ -14,19 +14,28 @@ function SliderTech() {
 
     const responsive = {
         0:{
-            items:2
+            items:1
         },
         512:{
+            items:2
+        },
+        880:{
+            items:3
+        },
+        1020:{
+            items:4
+        },
+        1120:{
             items:5
         }
     }
   return (
     <div className='slide flex flex-col items-center justify-center py-10'>
-        <div className='container'>
+        <div className='container slider-wrapper'>
             <p className='text-3xl font-bold text-zinc-600'>Technical skills to solve your need</p>
             <p className='text-zinc-500'>From Graphic designing | Web development | Architech | Lawyer | Engineer Etc</p>
         </div>        
-        <div className='container flex items-center  flex-col'>
+        <div className='container caurosel-div flex items-center  flex-col'>
        
              <AliceCarousel 
                 mouseTracking
