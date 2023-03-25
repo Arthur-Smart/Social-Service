@@ -26,6 +26,13 @@ function Engagement() {
         return res.data;
       })
   })
+
+  const ownerEmail = dataUser?.email
+  const handleEmail = () => {
+    window.location.href = `mailto:${ownerEmail}`
+  }
+
+  const phone = '+254742068914'
   
   return (
     <div className='engagement flex flex-col items-center justify-center'>
@@ -49,11 +56,11 @@ function Engagement() {
                   </div>)}
                   <img className='engagement-s-img mt-5' src={data?.image} alt='skills hub'/>
                   <p className='text-zinc-500 text-xl font-bold'>Engagement description</p>
-                  <p>{data?.description}</p>
+                  <p>{data?.shortDescription}</p>
               </div>
               <div className='engagement-about'>
                 <p className='text-zinc-500 text-xl font-bold'>About me</p>
-                <p>{data?.shortDescription}</p>
+                <p>{data?.description}</p>
                 {/*<div className='flex flex-wrap items-center '>
                 <p className='text-zinc-500 text-xl font-bold'>Skills</p>
                   <p className='border-2 border-amber-500 rounded-full py-2 px-7'>Python</p>
@@ -79,9 +86,9 @@ function Engagement() {
                   <button onClick={() => setShow(!show)} className='engagement-btn-btn py-3 text-white'>Contact Me</button>
                   {show && (
                       <div className='bg-gray-100 mt-2 p-2 contact-me flex items-center justify-between show'>
-                    <p className='text-lg text-zinc-600 cursor-pointer' ><i class="fa-solid fa-phone-volume"></i></p>
-                    <p className='text-lg text-zinc-600 cursor-pointer' ><i class="fa-regular fa-envelope"></i></p>
-                    <p className='text-lg text-zinc-600 cursor-pointer' ><i class="fa-regular fa-comments"></i></p>
+                    <a href={`tel:${phone}`}><p className='text-lg text-zinc-600 cursor-pointer' ><i class="fa-solid fa-phone-volume"></i></p></a>
+                    <p onClick={() => handleEmail()} className='text-lg text-zinc-600 cursor-pointer' ><i class="fa-regular fa-envelope"></i></p>
+                    <a href={`whatsapp.com/send?phone=${phone}`}><p className='text-lg text-zinc-600 cursor-pointer' ><i class="fa-brands fa-square-whatsapp"></i></p></a>
                   </div>
                   )}                  
                   </div>

@@ -19,15 +19,6 @@
     animation: 7s animate infinite alternate linear;
     z-index:-1;
 }
-/*
-background: linear-gradient(to right,
-    rgba(62, 66, 150, 0.87),
-    rgba(62, 66, 150, 0.87)),
-url("../../assets/mainbg.jpg");
-background-size: cover;
-background-position: center;
- background-color: #3e4396;
-*/
 
 .homehero-wrapper{
     width:100%;
@@ -45,14 +36,12 @@ background-position: center;
 }
 
 .location-s-input{
-    width:90%;
+    width:80%;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
 }
 
-.font-animate{
-   
-}
+
 
 @keyframes animate{
     100% {
@@ -60,9 +49,30 @@ background-position: center;
     }
 }
 
-.search-btn{
-    width:10%;
+.search-q-btn{
+    width:20%;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
-    text-align: center;
+}
+
+@media screen and (max-width:854px){
+    .main-wrapper{
+        width:90%;
+    }
+}
+
+@media screen and (max-width:740px){
+    .hero-text-m{
+        font-size: 24px;
+    }
+
+    .professional{
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width:415px){
+    .text-h-logo{
+        font-size: 48px;
+    }
 }

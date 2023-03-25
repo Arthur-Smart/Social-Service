@@ -39,7 +39,7 @@ function Account() {
         
         <div className='container flex flex-wrap items-center justify-center gap-2 pt-5'>
            {/*{data?.map(item => <UserAccountService item={item}/>)}*/}
-            {dataJob?.map(job => <UserAccountJobs job={job}/>)}
+            {dataJob?.map(job => <UserAccountJobs job={job} reftchJob={reftchJob}/>)}
             
         </div>
     </div>

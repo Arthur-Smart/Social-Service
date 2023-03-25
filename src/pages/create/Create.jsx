@@ -80,11 +80,18 @@ function Create() {
             <div className='skill-category px-3'>
                 <select value={category} onChange={(e) => setCategory(e.target.value)} className='py-2 px-2  outline-1 outline-amber-100 mb-2 text-zinc-500'>
                     <option>Select skill category</option>
-                    <option>Casual eg capenter | Mason | Cleaner etc</option>
-                    <option>IT & Tech</option>
-                    <option>Finance & Auditing</option>
-                    <option>Advocate</option>
-                    <option>plumbing</option>
+                    <option value='capentry'>Capentry</option>
+                    <option value='masonary'>Masonary</option>
+                    <option value='plumbing'>Plumbing</option>
+                    <option value='shaving'>Shaving & Salon</option>
+                    <option value='pendicure'>Nail technician</option>
+                    <option value='survey'>Survey services</option>
+                    <option value='graphic designing'>Graphic designing</option>
+                    <option value='mobile apps'>Mobile apps</option>
+                    <option value='photography'>Photography</option>
+                    <option value='videography'>Videography</option>
+                    <option value='finance'>Finance and Auditing</option>
+                    <option value='advocate'>Advocate</option>
                     <option>Others</option>
                 </select>
             </div>
