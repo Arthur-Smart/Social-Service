@@ -25,7 +25,7 @@ function HomeHero() {
                     <input onChange={(e) => setTitle(e.target.value)} value={title} className='skill-s-input mb-2 px-2 py-3 outline-0 rounded-md' type='text' placeholder='Search a skill'/>
                     <div className='location-button-2 items-center  justify-between  flex'>
                         <input onChange={(e) => setLocation(e.target.value)} value={location} className='location-s-input mb-25 px-2 py-3 outline-0 ' type='Type Location' placeholder='Location'/>
-                        <button onClick={() => handleSearch()} className='text-white self-start search-q-btn bg-red-500 py-3 px-10  text-center'>Search</button>
+                        <button onClick={() => handleSearch()} className='text-white self-start search-q-btn bg-red-500 py-3 px-10  text-center'><p><i class="fa-solid fa-magnifying-glass"></i></p></button>
                     </div>
                     <div className='flex flex-wrap gap-2 items-center mt-2'>
                       <p className='text-white  py-2 px-3 rounded-full border-2' >Graphic designer</p>
