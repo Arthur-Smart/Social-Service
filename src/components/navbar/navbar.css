@@ -9,6 +9,10 @@
     border-bottom: 1px solid rgba(128, 128, 128, 0.349);
 }
 
+.bars{
+    display: none;
+}
+
 .mobile-view{
     position: fixed;
     top:0;
@@ -16,6 +20,12 @@
     height:100vh;
     width:100%;
     background-color: rgba(0, 0, 0, 0.712);
+    transform:translateX(-100vw);
+    transition: all ease .5s;
+}
+
+.show{
+    transform:translateX(0)
 }
 
 .mobile-i-wrapper{
@@ -81,4 +91,20 @@
 
 .message{
     margin-left: 2px;
+}
+
+@media screen and (max-width:1025px){
+    .bars{
+        display:flex;
+    }
+
+    .right-nav{
+        display: none;
+    }
+}
+
+@media screen and (max-width:854px) {
+    .main-n-wrapper {
+        width: 90%;
+    }
 }
