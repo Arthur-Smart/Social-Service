@@ -54,6 +54,24 @@ function Navbar() {
         </div>
         {openRegModel && <Register setOpenRegModel={setOpenRegModel}/>}
         {openLoginModel && <Login setOpenLoginModel={setOpenLoginModel}/>}
+        <div className='mobile-view '>
+            <div className='mobile-i-wrapper px-3 py-3'>
+                 <p className='mb-8 cursor-pointer font-bold text-xl text-indigo-500'><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180"></i></p>
+                 <div className='flex items-center'>
+                    <img className='mobile-a-user' src={require('../../assets/mainbg.jpg')} alt="Skills hub"/>
+                    <div className='ml-1'>
+                        <p className='font-bold text-amber-500 text-2xl'>John Main</p>
+                        <p className='-mt-2 text-zinc-400 font-semibold'>Account User</p>
+                    </div>
+                 </div>
+                 <div className='mt-5'>
+                    <p className='mb-2 text-lg font-medium text-zinc-500 cursor-pointer' >Home</p>
+                    <p className='mb-2 text-lg font-medium text-zinc-500 cursor-pointer' >Find a skill</p>
+                    <p className='mb-2 text-lg font-medium text-zinc-500 cursor-pointer' >Find a paying task</p>
+                 </div>
+                 <button className='bg-amber-500 w-full py-3 px-3 rounded-full mt-6 text-white'>Logout</button>
+            </div>
+        </div>
         
     </div>
   )

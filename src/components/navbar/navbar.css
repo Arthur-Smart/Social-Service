@@ -9,6 +9,30 @@
     border-bottom: 1px solid rgba(128, 128, 128, 0.349);
 }
 
+.mobile-view{
+    position: fixed;
+    top:0;
+    right:0;
+    height:100vh;
+    width:100%;
+    background-color: rgba(0, 0, 0, 0.712);
+}
+
+.mobile-i-wrapper{
+    position: absolute;
+    top:0;
+    right:0;
+    width:300px;
+    height:100%;
+    background-color: #fff;
+}
+
+.mobile-a-user{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+}
+
 .left-nav{
     flex:2;
     font-family: 'Poppins', sans-serif;
