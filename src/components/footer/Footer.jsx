@@ -10,7 +10,7 @@ function Footer() {
           <p className='text-zinc-500 mb-2 text-lg'>A solution for kenyans</p>
           <div className='footer-search-button items-center  flex'>
               <input className='location-s-input border-2 mb-25 px-2 py-3 outline-0 ' type='Type Location' placeholder='Search'/>
-              <button className='flex  text-white self-start border-2  bg-red-500 py-3 px-10  '>Search</button>
+              <button className='flex  text-white  border-2  bg-red-500 py-3 px-10  '>Search</button>
            </div>
         </div>
         <div className='container footer-b-wrapper flex items-center justify-between'>

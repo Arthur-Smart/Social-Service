@@ -1,6 +1,6 @@
 .engagementcard{
-    width:20vw;
-    height:55vh;
+    width:350px;
+    height:65vh;
     position: relative;
     overflow: hidden;
 }
@@ -22,4 +22,18 @@
     position: absolute;
     bottom:0;
     border-top: 1px solid rgba(128, 128, 128, 0.281);
+}
+
+
+@media screen and (max-width:1115px){
+    .engagementcard{
+        width:35vw;
+        height:65vh;
+    }
+}
+
+@media screen and (max-width:850px) {
+    .engagementcard {
+        width: 100%;
+    }
 }

@@ -1,3 +1,16 @@
 .engagements{
     width:100%;
 }
+
+
+@media screen and (max-width:854px) {
+    .filters-wrapper {
+        width: 90%;
+    }
+    .length-wrapper {
+        width: 90%;
+    }
+    .e-main-wrapper {
+        width: 90%;
+    }
+}
