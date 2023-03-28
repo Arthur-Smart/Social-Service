@@ -35,9 +35,9 @@ console.log(select)
     <div className='user-account flex flex-col items-center justify-center py-10'>
         <div className='account-btns-wrapper pb-5 flex  items-center justify-center'>
           <div className='container  flex flex-wrap gap-2 select-btn-navigation items-center '>
-                <button onClick={()=>setSelect(true)} className={select ? 'account-active-btn py-3 px-4 bg-indigo-600 text-white' : 'py-3 px-4 bg-indigo-600 text-white'}>Posted Services</button>  
-                <button  onClick={()=>setSelect(false)} className={!select ? 'account-active-btn py-3 px-4 bg-indigo-600 text-white' : 'py-3 px-4 bg-indigo-600 text-white '}>Posted Jobs</button>  
-                <button  className='py-3 px-4 bg-indigo-600 text-white'>Application</button>  
+                <button onClick={()=>setSelect(true)} className={select ? ' py-3 px-4 bg-amber-600 text-white rounded-full' : 'rounded-full py-3 px-4 bg-indigo-600 text-white'}>Posted Services</button>  
+                <button  onClick={()=>setSelect(false)} className={!select ? 'py-3 px-4 bg-amber-600 text-white rounded-full' : 'rounded-full py-3 px-4 bg-indigo-600 text-white '}>Posted Jobs</button>  
+                <button  className='py-3 px-4 bg-green-400 text-white rounded-full'>Application</button>  
           </div>
         </div>
         

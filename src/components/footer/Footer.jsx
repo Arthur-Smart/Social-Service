@@ -1,7 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 import './footer.css'
 
 function Footer() {
+  const [title, setTitle] = useState('')
+   const navigate = useNavigate()
+
+  const handleSearch = () =>{
+    if(title ===''){
+      alert('Please fill the search field')
+    } else {
+      navigate(`engagements?search=${title}`) 
+    }
+  }
+
   return (
     <div className='footer flex flex-col items-center justify-center py-10'>
         <div className='line'></div>
@@ -9,8 +21,8 @@ function Footer() {
           <img className='flag' src={require('../../assets/flag.png')} alt='skill hub'/>
           <p className='text-zinc-500 mb-2 text-lg'>A solution for kenyans</p>
           <div className='footer-search-button items-center  flex'>
-              <input className='location-s-input border-2 mb-25 px-2 py-3 outline-0 ' type='Type Location' placeholder='Search'/>
-              <button className='flex  text-white  border-2  bg-red-500 py-3 px-10  '>Search</button>
+              <input value={title} onChange={(e) => setTitle(e.target.value)} className='location-s-input border-2 mb-25 px-2 py-3 outline-0 ' type='Type Location' placeholder='Search'/>
+              <button onClick={() => handleSearch()} className='text-white  border-2  bg-red-500 py-3 px-10  '>Search</button>
            </div>
         </div>
         <div className='container footer-b-wrapper flex items-center justify-between'>

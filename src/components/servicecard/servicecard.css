@@ -36,6 +36,12 @@
 }
 
 
+@media screen and (max-width:1117px){
+    .service-card{
+        width:90%;
+        height:50vh;
+    }
+}
 @media screen and (max-width:813px){
     .service-card{
         width:100%;

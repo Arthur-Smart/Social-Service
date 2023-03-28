@@ -20,8 +20,11 @@
 
 @media screen and (max-width:854px){
     .footer-wrapper-m{
-        width:90%;
+        width:100%;
     }
+
+    
+
 }
 
 @media screen and (max-width:790px){
@@ -35,6 +38,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width:90%;
     }
 
     .footer-search-button input , button{
@@ -48,7 +52,7 @@
 
 @media screen and (max-width:450px) {
     .footer-left {
-        margin-top: 10pxs;
+        margin-top: 10px;
         flex-direction: column;
     }
 }

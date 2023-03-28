@@ -39,7 +39,7 @@ function Navbar() {
                 {user  !==null ? (
                     <>
                         <button onClick={() => logoutUser()} className='mr-6 border-amber-500 rounded-full py-2 px-8 border-2 text-lg font-medium'>Logout</button>
-                        <button onClick={() => setOpenRegModel(true)} className='bg-black px-8 py-2 border-black border-2 rounded-full text-lg font-medium text-amber-500'><i class="fa-solid fa-plus"></i></button>
+                        <Link to='/create'><button onClick={() => setOpenRegModel(true)} className='bg-black px-8 py-2 border-black border-2 rounded-full text-lg font-medium text-amber-500'><i class="fa-solid fa-plus"></i></button></Link>
                     </>
                 ) : 
                     (
@@ -50,7 +50,7 @@ function Navbar() {
                     )
                  }
                 
-                <Link to='account/4'>
+                <Link to={`/account/${user._id}`}>
                 <div className='flex items-center notifications bg-amber-500 ml-6'>
                    {user && <img className='user-nav-pic' src={user?.userImage} alt='Skills hub'/>}
                 </div>

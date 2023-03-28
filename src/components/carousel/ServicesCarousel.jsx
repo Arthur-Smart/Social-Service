@@ -31,6 +31,9 @@ function ServicesCarousel() {
         },
         814:{
             items:2
+        },
+        1090:{
+            items:3
         }
 
     }
