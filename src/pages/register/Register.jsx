@@ -1,14 +1,17 @@
 import React, {useState} from 'react'
 import axios from "axios"
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import './register.css'
 
-function Register({setOpenRegModel}) {
+function Register() {
     const [file, setFile] = useState(null)
     const [userImage, setUserImage] = useState('')
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [error, setError] = useState(null)
+
+    const navigate = useNavigate()
 
    // const [user, setUser] = useState({
     //    name:"",
@@ -49,9 +52,10 @@ function Register({setOpenRegModel}) {
           setName('')
           setEmail('')
           setPassword('')
-          setOpenRegModel(false)
+            navigate('/')
      } catch (err) {
-        console.log(err)
+       setError(err.response.data)
+        //console.log(err.response.data)
      }     
   }
 
@@ -86,6 +90,7 @@ function Register({setOpenRegModel}) {
             <div className='px-2 py-3 w-full'>
                 <button onClick={() =>handleRegister()} className='py-3 px-2 rounded-full bg-amber-500 w-full text-white'>Join</button>
             </div>
+            {error && <p className='text-red-500 mb-3'>{error}</p>}            
           <p className='text-center mb-5'>Already have an account? <br />Please click <Link to='/login'><span className='text-blue-900 underline cursor-pointer'>here</span> </Link>to sign in</p>
         </div>
     </div>

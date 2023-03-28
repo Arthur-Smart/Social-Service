@@ -2,6 +2,18 @@
     width:100%;
 }
 
+.quick-search{
+    width:100%;
+    border-width: 1px;
+}
+
+.quick-search input {
+    width: 80%;
+}
+
+.quick-search button {
+    width: 20%;
+}
 
 @media screen and (max-width:854px) {
     .filters-wrapper {

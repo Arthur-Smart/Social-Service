@@ -11,6 +11,8 @@ function Engagement() {
   const [show, setShow] = useState(false)
  
   const {id} = useParams();
+  const user = JSON.parse(localStorage.getItem('currentUser'))
+  
  
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ['service'],
@@ -85,13 +87,13 @@ function Engagement() {
                    </div>
                    <p className='text-zinc-500'>Such a project will take approximately 2 months to complete</p>
                   <button onClick={() => setShow(!show)} className='engagement-btn-btn py-3 text-white'>Contact Me</button>
-                  {show && (
+                  {show && user !==null ? (
                       <div className='bg-gray-100 mt-2 p-2 contact-me flex items-center justify-between show'>
                     <a href={`tel:${phone}`}><p className='text-lg text-zinc-600 cursor-pointer' ><i class="fa-solid fa-phone-volume"></i></p></a>
                     <p onClick={() => handleEmail()} className='text-lg text-zinc-600 cursor-pointer' ><i class="fa-regular fa-envelope"></i></p>
                     <a href={`whatsapp.com/send?phone=${phone}`}><p className='text-lg text-zinc-600 cursor-pointer' ><i class="fa-brands fa-square-whatsapp"></i></p></a>
                   </div>
-                  )}                  
+                  ) : show && <p>Please login to continue</p>}                  
                   </div>
             </div>
         </div>}

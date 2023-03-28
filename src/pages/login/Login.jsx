@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import axios from "axios"
 import {Link} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './login.css'
 
 function Login({setOpenLoginModel}) {
@@ -8,16 +9,18 @@ function Login({setOpenLoginModel}) {
     const [password, setPassword] = useState('')
     const [error, setError] = useState(null)
 
+    const navigate = useNavigate()
+
     const handleLogin = async () =>{
         try {
             const res = await axios.post('http://localhost:8800/api/auth/login', {
                 name , password
             },{withCredentials:true});
-            console.log(res.data)
             localStorage.setItem("currentUser", JSON.stringify(res.data));
+            navigate('/')
         } catch (err) {
-            setError(err)
-            console.log(err)
+            setError(err.response.data)
+            console.log(err.response.data)
         }
         setOpenLoginModel(false)
         console.log(JSON.parse(localStorage.getItem('currentUser')))
@@ -42,6 +45,7 @@ function Login({setOpenLoginModel}) {
             <div className='px-2 py-3 w-full'>
                 <button onClick={() => handleLogin()} className='py-3 px-2 rounded-full bg-amber-500 w-full text-white'>Login</button>
             </div>
+             {error && <p className='text-red-500 mb-3'>{error}</p>} 
             <p className='text-center mb-5'>Don't have an account? <br />Please click <Link to='/register'><span className='text-blue-900 underline cursor-pointer'>join</span></Link> to create an account</p>
             <p className='my-2 text-indigo-600 underline cursor-pointer' >Forgot password</p>
         </div>

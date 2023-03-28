@@ -98,7 +98,7 @@ function JobPage() {
                 <textarea className='apply-textarea py-2 px-2 border-2 border-indigo-200  outline-0 text-zinc-500 mt-2' placeholder='Write a proposal'></textarea>
                 <input type='file' id='upload' style={{display:'none'}}/>
                 <div className='w-full items-start flex items-center py-2 justify-between'>
-                   <label className='flex-start border-2 text-white cursor-pointer border-amber-100 rounded-full py-2 px-5 mt-2 bg-amber-500' htmlFor='upload'>Upload Resume</label>
+                   {/*<label className='flex-start border-2 text-white cursor-pointer border-amber-100 rounded-full py-2 px-5 mt-2 bg-amber-500' htmlFor='upload'>Upload Resume</label>*/}
                     <button disabled className='item-start  apply-btn py-2 px-4 rounded-full text-white'>Publish</button>
                 </div>                
             </div>

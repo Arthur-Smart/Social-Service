@@ -8,7 +8,7 @@ function SingleJob({job}) {
     const { isLoading, error, data, refetch } = useQuery({
         queryKey: ['userJobOwner'],
         queryFn: () =>
-        axios(`http://localhost:8800/api/user/${job.userId}`).then((res) => {
+        axios(`http://localhost:8800/api/user/${job?.userId}`).then((res) => {
             return res.data;
       })
   });

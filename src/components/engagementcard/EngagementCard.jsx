@@ -8,8 +8,17 @@ function EngagementCard({item}) {
  const { isLoading, error, data, refetch } = useQuery({
     queryKey: ['serviceOwner'],
     queryFn: () =>
-      axios(`http://localhost:8800/api/user/${item.userId}`).then((res) => {
+      axios(`http://localhost:8800/api/user/${item?.userId}`).then((res) => {
         return res.data;
+      })
+  });
+
+
+   const { isLoading:isLoadingReview, error:errorReview, data:dataReview} = useQuery({
+        queryKey: ['reviews'],
+        queryFn: () =>
+        axios(`http://localhost:8800/api/reviews/${item?._id}`).then((res) => {
+            return res.data;
       })
   });
   
@@ -30,7 +39,7 @@ function EngagementCard({item}) {
         </div>
         <div className='w-full engagement-c-like-comment flex items-center justify-between p-2'>
             <p className='text-zinc-600 cursor-pointer font-medium' ><i class="fa-solid fa-heart"></i> 12</p>
-            <p className='text-zinc-600 cursor-pointer font-medium' ><i class="fa-regular fa-comment"></i> 102</p>
+            <p className='text-zinc-600 cursor-pointer font-medium' ><i class="fa-regular fa-comment"></i> {dataReview?.length}</p>
         </div>
         <div className='price-tab bg-amber-500 flex flex-col'>
             <p className='text-white font-bold'>Kes {item.price}</p>
