@@ -36,8 +36,8 @@ function Engagement() {
   
   return (
     <div className='engagement flex flex-col items-center justify-center'>
-        <div className='container'></div>
-       {isLoading ? "Loading" : error ? "Something went long" : <div className='container flex justify-between  mt-10'>
+        <div className='container m-eng-wrapper'></div>
+       {isLoading ? "Loading" : error ? "Something went long" : <div className='container container-wrapper flex justify-between  mt-10'>
             <div className='engagement-left'>
               <div className='engagement-desc'>
                   <p className='font-bold text-xl text-zinc-500'>{data?.title}</p>

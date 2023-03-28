@@ -42,7 +42,7 @@ function Engagements() {
          </select>*/}    
         </div>
         <div className='container length-wrapper mt-4'>
-            <p className='font-bold text-xl text-zinc-500'>{data.length} services available</p>
+            <p className='font-bold text-xl text-zinc-500'>{data?.length} services available</p>
         </div>
         <div className='container e-main-wrapper mt-3 flex flex-wrap  items-center justify-center gap-4'>
             {

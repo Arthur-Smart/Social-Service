@@ -52,3 +52,21 @@
 .review-btn{
     background-color: #3e4396;
 }
+
+@media screen and (max-width:854px){
+    .m-eng-wrapper{
+        width:90%;        
+    }
+
+    .container-wrapper{
+        flex-direction: column;
+    }
+
+        .engagement-left {
+            width: 100%;
+        }
+    
+        .engagement-right {
+            width: 100%;
+        }
+}
