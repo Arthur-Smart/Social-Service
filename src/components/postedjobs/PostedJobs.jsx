@@ -2,6 +2,7 @@ import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 import axios from "axios"
 import SingleJob from '../singlejob/SingleJob'
+import {Link} from 'react-router-dom'
 import './postedjobs.css'
 
 function PostedJobs() {
@@ -25,7 +26,7 @@ function PostedJobs() {
             {randomData?.map((job) =><SingleJob key={job._id} job={job}/>)}
         </div>
         <div className='container p-b-wrapper items-start'>
-            <button className='border-2 border-indigo-800 hover:bg-indigo-800 hover:text-white py-3 px-10 rounded-full my-4'>Explore more</button>
+            <Link to='/jobs'><button className='border-2 border-indigo-800 hover:bg-indigo-800 hover:text-white py-3 px-10 rounded-full my-4'>Explore more</button></Link>
         </div>        
     </div>
   )

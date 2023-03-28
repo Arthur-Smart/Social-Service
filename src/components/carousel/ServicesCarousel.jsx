@@ -5,6 +5,7 @@ import AliceCarousel from 'react-alice-carousel';
 import './servicecarousel.css'
 import ServiceCard from '../servicecard/ServiceCard';
 import { useQuery } from '@tanstack/react-query'
+import {Link} from 'react-router-dom'
 import axios from "axios"
 
 function ServicesCarousel() {
@@ -58,7 +59,7 @@ function ServicesCarousel() {
         )}        
         
         <div className='container s-carousel-wrapper flex items-start'>
-          <button className='border-2 border-indigo-800 hover:bg-indigo-800 hover:text-white py-3 px-10 rounded-full '>More</button>
+          <Link to='/engagements'><button className='border-2 border-indigo-800 hover:bg-indigo-800 hover:text-white py-3 px-10 rounded-full '>More</button></Link>
         </div>
     </div>
   )
