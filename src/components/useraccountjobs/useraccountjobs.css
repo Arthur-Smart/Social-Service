@@ -23,3 +23,21 @@
     width: 100%;
     height: 15%;
 }
+
+@media screen and (max-width:1022px){
+    .user-account-jobs{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:760px) {
+    .user-account-jobs {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:540px) {
+    .user-account-jobs {
+        width: 100%;
+    }
+}

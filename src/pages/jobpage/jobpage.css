@@ -80,3 +80,17 @@
 .close-apply-btn{
     width:50%
 }
+
+@media screen and (max-width:854px){
+    .j-p-main-wrapper{
+        width:90%;
+    }
+
+    .similar-jobs{
+        width:100%;
+    }
+
+    .jobpage-wrapper{
+        width: 90%;
+    }
+}

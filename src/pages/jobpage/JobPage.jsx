@@ -44,7 +44,7 @@ function JobPage() {
 
   return (
     <div className='jobpage flex flex-col items-center justify-center'>
-        <div className='container flex items-center justify-center mt-10'>
+        <div className='container j-p-main-wrapper flex items-center justify-center mt-10'>
             <div className='jobpage-wrapper rounded-lg py-3'>
                 <div className='title-project p-3'>
                     <div className='flex items-center justify-between'>
@@ -63,7 +63,7 @@ function JobPage() {
                 </div>
                 <div className='j-p-skills p-3'>
                     <p className='text-zinc-600 font-semibold'>Skills required</p>
-                    <div className='flex items-center gap-2'>
+                    <div className='flex flex-wrap items-center gap-2'>
                     {data?.skills.map((skill) => (
                         <p className='skill-text text-zinc-500 rounded-full border-2 border-amber-500 py-2 px-5'>{skill}</p>
                     ))}
@@ -81,7 +81,7 @@ function JobPage() {
 
         {/*Same clients job*/}
         <div className='similar-jobs mt-10 flex items-center justify-center py-2'>
-            <div className='container'>
+            <div className='container s-u-main-wrapper'>
                 <p className='text-white  text-lg similar-title mt-4'>Other job posting by {dataUser?.name} | <span className='text-amber-500 font-bold'>{filterData?.length} other jobs</span></p>
                 <div className='other-jobs-wrapper flex flex-wrap items-center gap-2 justify-center'>
                     {filterData?.map((f) => <OtherJobs key={f._id} item={f}/>)}

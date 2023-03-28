@@ -12,3 +12,12 @@
     width:100%;
     border-bottom: 1px solid rgba(128, 128, 128, 0.192);
 }
+
+@media screen and (max-width:854px){
+    .selection-wrapper{
+        width:90%;
+    }
+    .select-btn-navigation{
+        width:90%;
+    }
+}
