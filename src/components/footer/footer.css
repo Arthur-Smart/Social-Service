@@ -17,3 +17,38 @@
     background-color: rgba(128, 128, 128, 0.288);
     margin:20px 0;
 }
+
+@media screen and (max-width:854px){
+    .footer-wrapper-m{
+        width:90%;
+    }
+}
+
+@media screen and (max-width:790px){
+    .footer-b-wrapper{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:750px){
+    .footer-search-button{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-search-button input , button{
+    width:100%;
+    }
+
+    .footer-search-button button{
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .footer-left {
+        margin-top: 10pxs;
+        flex-direction: column;
+    }
+}

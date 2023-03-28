@@ -5,15 +5,15 @@ function Footer() {
   return (
     <div className='footer flex flex-col items-center justify-center py-10'>
         <div className='line'></div>
-        <div className='container flex flex-col items-center justify-center'>
+        <div className='container footer-wrapper-m flex flex-col items-center justify-center'>
           <img className='flag' src={require('../../assets/flag.png')} alt='skill hub'/>
           <p className='text-zinc-500 mb-2 text-lg'>A solution for kenyans</p>
           <div className='footer-search-button items-center  flex'>
               <input className='location-s-input border-2 mb-25 px-2 py-3 outline-0 ' type='Type Location' placeholder='Search'/>
-              <button className='flex  text-white self-start border-2  bg-red-500 py-3 px-10  text-center'>Search</button>
+              <button className='flex  text-white self-start border-2  bg-red-500 py-3 px-10  '>Search</button>
            </div>
         </div>
-        <div className='container flex items-center justify-between'>
+        <div className='container footer-b-wrapper flex items-center justify-between'>
             <div className='footer-left flex items-center'>
                 <p className='text-zinc-400 text-4xl font-bold'>SkillsHub</p>
                 <p className='ml-3 text-zinc-400'>Developed with love by Arthur &copy;2023</p>
