@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import axios from "axios"
+import {Link} from 'react-router-dom'
 import './register.css'
 
 function Register({setOpenRegModel}) {
@@ -59,6 +60,7 @@ function Register({setOpenRegModel}) {
 
   return (
     <div className='register flex flex-col items-center justify-center'>
+        <p className='text-white text-lg'><i class="fa-regular fa-rectangle-xmark"></i></p>
         <div className='register-wrapper bg-white flex flex-col items-center justify-center rounded-md'>
             <div>
                 <p className='font-bold text-xl text-zinc-500 py-2'>Join SkillsHub</p>
@@ -84,7 +86,7 @@ function Register({setOpenRegModel}) {
             <div className='px-2 py-3 w-full'>
                 <button onClick={() =>handleRegister()} className='py-3 px-2 rounded-full bg-amber-500 w-full text-white'>Join</button>
             </div>
-          <p className='text-center mb-5'>Already have an account? <br />Please click <span className='text-blue-900 underline cursor-pointer'>here</span> to sign in</p>
+          <p className='text-center mb-5'>Already have an account? <br />Please click <Link to='/login'><span className='text-blue-900 underline cursor-pointer'>here</span> </Link>to sign in</p>
         </div>
     </div>
   )

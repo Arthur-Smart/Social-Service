@@ -20,6 +20,8 @@ import {
   useQuery,
 } from '@tanstack/react-query'
 import Account from './pages/account/Account';
+import Login from './pages/login/Login';
+import Register from './pages/register/Register';
 
 
 
@@ -78,6 +80,14 @@ function App() {
        {
         path:"/account/:id",
         element:<Account/>
+      },
+      {
+        path:"/login",
+        element:<Login/>
+      },
+      {
+        path:"/register",
+        element:<Register/>
       },
     ]
   },

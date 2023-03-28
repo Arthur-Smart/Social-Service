@@ -11,9 +11,11 @@ function Navbar() {
     const [openLoginModel, setOpenLoginModel] = useState(false)
     const user = JSON.parse(localStorage.getItem("currentUser"));
 
+    const navigate = useNavigation()
     const openMobileMenu = () => {
         setOpen(!open)
     }
+
 
     const logoutUser = () => {
         try {
@@ -42,8 +44,8 @@ function Navbar() {
                 ) : 
                     (
                          <>
-                        <button onClick={() => setOpenLoginModel(true)} className='mr-6 border-amber-500 rounded-full py-2 px-8 border-2 text-lg font-medium'>Login</button>
-                        <button onClick={() => setOpenRegModel(true)} className='bg-black px-8 py-2 border-black border-2 rounded-full text-lg font-medium text-amber-500'>Join</button>
+                        <Link to='/login'><button  className='mr-6 border-amber-500 rounded-full py-2 px-8 border-2 text-lg font-medium'>Login</button></Link>
+                        <Link to='/register'><button  className='bg-black px-8 py-2 border-black border-2 rounded-full text-lg font-medium text-amber-500'>Join</button></Link>
                     </>
                     )
                  }
@@ -56,24 +58,34 @@ function Navbar() {
             </div>
             <p onClick={() => openMobileMenu()} className='bars flex text-3xl text-zinc-600 cursor-pointer'><i class="fa-solid fa-bars-staggered fa-rotate-180"></i></p>
         </div>
-        {openRegModel && <Register setOpenRegModel={setOpenRegModel}/>}
-        {openLoginModel && <Login setOpenLoginModel={setOpenLoginModel}/>}
+        
+        {/*Mobile View */}
         <div className={open ? 'mobile-view show' : 'mobile-view'}>
             <div className='mobile-i-wrapper px-3 py-3'>                
                  <p onClick={() => openMobileMenu()} className='mb-8 cursor-pointer font-bold text-xl text-indigo-500'><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180"></i></p>
-                 <div className='flex items-center'>
-                    <img className='mobile-a-user' src={require('../../assets/mainbg.jpg')} alt="Skills hub"/>
-                    <div className='ml-1'>
+                
+                    {user ? (
+                    <div className='flex items-center'>
+                        <img className='mobile-a-user' src={require('../../assets/mainbg.jpg')} alt="Skills hub"/>
+                        <div className='ml-1'>
                         <p className='font-bold text-amber-500 text-2xl'>John Main</p>
                         <p className='-mt-2 text-zinc-400 font-semibold'>Account User</p>
                     </div>
-                 </div>
+                     </div>
+                    ) : (<>
+                    <button className='bg-indigo-700 w-full py-3 -mt-5 px-3 rounded-full mt-6 text-white'>Join Skillshub</button>
+                    <button className='border-amber-500 w-full py-3  px-3 rounded-full mt-6 mobile-login-btn'>Login here</button>
+
+                    </>
+                    )}
+                    
+                
                  <div className='mt-5'>
                     <p className='mb-2 text-lg font-medium text-zinc-500 cursor-pointer' >Home</p>
                     <p className='mb-2 text-lg font-medium text-zinc-500 cursor-pointer' >Find a skill</p>
                     <p className='mb-2 text-lg font-medium text-zinc-500 cursor-pointer' >Find a paying task</p>
                  </div>
-                 <button className='bg-amber-500 w-full py-3 px-3 rounded-full mt-6 text-white'>Logout</button>
+                 {user &&  <button className='bg-amber-500 w-full py-3 px-3 rounded-full mt-6 text-white'>Logout</button>}
             </div>
         </div>
         

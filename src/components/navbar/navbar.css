@@ -19,13 +19,17 @@
     right:0;
     height:100vh;
     width:100%;
-    background-color: rgba(0, 0, 0, 0.712);
+    background: rgba(0, 0, 0, 0.712);
     transform:translateX(-100vw);
     transition: all ease .5s;
 }
 
 .show{
     transform:translateX(0)
+}
+
+.mobile-login-btn{
+    border-width:2px;
 }
 
 .mobile-i-wrapper{

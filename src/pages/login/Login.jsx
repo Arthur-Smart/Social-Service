@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import axios from "axios"
+import {Link} from 'react-router-dom'
 import './login.css'
 
 function Login({setOpenLoginModel}) {
@@ -23,25 +24,15 @@ function Login({setOpenLoginModel}) {
     }
   return (
     <div className='login flex flex-col items-center justify-center'>
+        <p><i class="fa-regular fa-rectangle-xmark"></i></p>
         <div className='login-wrapper bg-white flex flex-col items-center justify-center rounded-md'>
             <div>
                 <p className='font-bold text-xl text-zinc-500 py-2'>Join SkillsHub</p>
             </div>
-            <div className='w-full px-2 py-3'>
-                <div className='w-full facebook-btn py-3 px-2 rounded-full flex items-center cursor-pointer'>
-                    <img src={require('../../assets/facebook.png')} alt='Skills hub'/>
-                    <p className='ml-2 text-white'>Join using facebook</p>
-                </div>
-
-                <div className='border-gray-200 google-btn w-full mt-2 py-3 px-2  rounded-full flex items-center cursor-pointer'>
-                     <img src={require('../../assets/google.png')} alt='Skills hub'/>
-                    <p className='ml-2 text-zinc-500'>Join using Google</p>
-                </div>
-            </div>
-
+           
             <div className=' flex items-center justify-between w-full px-2'>
                 <div className='join-line border-gray-200'></div>
-                    <p>OR</p>
+                    {/*<p>Fill</p>*/}
                 <div className='join-line border-gray-200'></div>
             </div>
             <div className='flex flex-col items-center w-full px-2'>
@@ -51,7 +42,8 @@ function Login({setOpenLoginModel}) {
             <div className='px-2 py-3 w-full'>
                 <button onClick={() => handleLogin()} className='py-3 px-2 rounded-full bg-amber-500 w-full text-white'>Login</button>
             </div>
-            <p className='text-center mb-5'>Don't have an account? <br />Please click <span className='text-blue-900 underline cursor-pointer'>join</span> to create an account</p>
+            <p className='text-center mb-5'>Don't have an account? <br />Please click <Link to='/register'><span className='text-blue-900 underline cursor-pointer'>join</span></Link> to create an account</p>
+            <p className='my-2 text-indigo-600 underline cursor-pointer' >Forgot password</p>
         </div>
     </div>
   )
