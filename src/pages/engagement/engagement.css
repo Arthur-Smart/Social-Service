@@ -59,14 +59,23 @@
     }
 
     .container-wrapper{
+        width:90%;
         flex-direction: column;
     }
 
-        .engagement-left {
-            width: 100%;
-        }
-    
-        .engagement-right {
-            width: 100%;
-        }
+    .engagement-left {
+        width: 100%;
+    }
+
+    .engagement-right {
+        width: 100%;
+    }
+
+            .engagement-info{
+                width:100%;
+            }
+}
+
+@media screen and (max-width:780px){
+
 }

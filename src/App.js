@@ -22,6 +22,7 @@ import {
 import Account from './pages/account/Account';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
+import Jobs from './pages/jobs/Jobs';
 
 
 
@@ -56,6 +57,10 @@ function App() {
       {
         path:"/engagements",
         element:<Engagements/>
+      },
+      {
+        path:"/jobs",
+        element:<Jobs/>
       },
       {
         path:"/engagement/:id",

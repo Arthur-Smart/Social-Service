@@ -38,14 +38,16 @@ function Reviews({serviceId}) {
   //({userId, serviceId, userReview})
   return (
    <div className='reviews w-full'>
-              <div className='flex items-center justify-between mt-2 '>
-                  <p className='text-zinc-500 text-xl font-bold'>Reviews</p>
-                  <button onClick={() => handleSubmit()} className=' border-2 py-3 px-6 rounded-full hover:bg-amber-600 hover:border-amber-600 hover:text-white' >Send review</button>
-              </div>
-         
+        <div className='top-bottom-review'>
+              <p className='text-zinc-500 text-xl font-bold'>Reviews</p>         
               <div className='flex flex-col items-center justify-between my-2'>
                <input onChange={(e) => setDescription(e.target.value)} className='review-input outline-0' type='text' placeholder='Write a review...'/>              
               </div> 
+
+              <div className='flex flex-wrap items-center justify-between my-2 '>                  
+                  <button onClick={() => handleSubmit()} className=' border-2 py-3 px-6 rounded-full hover:bg-amber-600 hover:border-amber-600 hover:text-white' >Send review</button>
+              </div>
+          </div>    
            
                <div className='w-full'>
                {isLoading ? "Loading" : error ? "Something went wrong" : data.map((review) => <Review key={review._id} review={review}/>)}             

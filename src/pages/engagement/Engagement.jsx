@@ -5,6 +5,7 @@ import axios from "axios"
 import './engagement.css'
 import { useParams } from 'react-router-dom'
 import Reviews from '../../components/reviews/Reviews'
+import {Link} from 'react-router-dom'
 
 function Engagement() {
   const [show, setShow] = useState(false)
@@ -52,7 +53,7 @@ function Engagement() {
                       <p className='text-amber-500 font-bold' ><i class="fa-solid fa-star"></i></p>
                       <p className='text-amber-500 font-bold' >(5)</p>
                     </div>
-                    <button className='py-1 px-2 bg-red-500 ml-2 rounded-md text-white'>All my <span className='font-bold'>engagements</span></button>
+                    <Link to={`/engagements?userId=${data?.userId}`}><button className='py-1 px-2 bg-red-500 ml-2 rounded-md text-white'>All my <span className='font-bold'>engagements</span></button></Link>
                   </div>)}
                   <img className='engagement-s-img mt-5' src={data?.image} alt='skills hub'/>
                   <p className='text-zinc-500 text-xl font-bold'>Engagement description</p>
