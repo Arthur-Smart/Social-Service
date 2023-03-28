@@ -1,0 +1,13 @@
+.postedjobs{
+    width:100%;
+}
+
+@media screen and (max-width:854px) {
+    .posted-jobs-wrapper {
+        width: 90%;
+    }
+
+    .p-b-wrapper{
+        width:90%;
+    }
+}
