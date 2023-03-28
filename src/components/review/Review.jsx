@@ -9,10 +9,14 @@ function Review({review}) {
   const { isLoading, error, data, refetch } = useQuery({
         queryKey: ['userReviews'],
         queryFn: () =>
-        axios(`http://localhost:8800/api/user/${review.userId}`).then((res) => {
+        axios(`http://localhost:8800/api/user/${review?.userId}`).then((res) => {
             return res.data;
       })
   });
+
+  const handleDelete = async () =>{
+    await axios.delete(`http://localhost:8800/api/reviews/${review?.userId}`, {withCredentials:true})
+  }
 
   return (
     <div className='review flex items-center w-full border-2 p-2 rounded-md mt-2'>
@@ -23,7 +27,7 @@ function Review({review}) {
           <p className='text-zinc-600'>{review?.description}</p>
           <p className='text-zinc-600'>{moment(review?.createdAt).fromNow()}</p>
         </div>  
-          {user?._id === review?.userId && (<p className='ml-5'><i class="fa-solid fa-trash"></i></p>)}     
+          {user?._id === review?.userId && (<p onClick={() => handleDelete()} className='ml-5 cursor-pointer'><i class="fa-solid fa-trash"></i></p>)}     
             
       </div>
     </div>
