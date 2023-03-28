@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './howtoengage.css'
 
 function HowToEngage() {
@@ -39,7 +40,7 @@ function HowToEngage() {
              </div> 
 
              <div>
-                <button className='py-3 px-5 rounded-full get-started-btn text-white cursor-pointer mt-3'>Get started</button>
+                <Link to='/register'><button className='py-3 px-5 rounded-full get-started-btn text-white cursor-pointer mt-3'>Get started</button></Link>
              </div>
             </div>
         </div>
