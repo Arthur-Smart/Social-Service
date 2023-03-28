@@ -50,3 +50,21 @@
     height: 30px;
     height: 30px;
 }
+
+@media screen and (max-width:987px) {
+    .login-wrapper {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:987px) {
+    .login-wrapper {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .login-wrapper {
+        width: 90%;
+    }
+}

@@ -80,3 +80,21 @@ background-color: rgb(50, 50, 117);
     height:2px;
     width:95%;
 }
+
+@media screen and (max-width:987px){
+    .register-wrapper{
+        width:50%;
+    }
+}
+
+@media screen and (max-width:987px) {
+    .register-wrapper {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .register-wrapper {
+        width: 90%;
+    }
+}

@@ -50,7 +50,7 @@ function Navbar() {
                     )
                  }
                 
-                <Link to={`/account/${user._id}`}>
+                <Link to={`/account/${user?._id}`}>
                 <div className='flex items-center notifications bg-amber-500 ml-6'>
                    {user && <img className='user-nav-pic' src={user?.userImage} alt='Skills hub'/>}
                 </div>
@@ -66,26 +66,25 @@ function Navbar() {
                 
                     {user ? (
                     <div className='flex items-center'>
-                        <img className='mobile-a-user' src={require('../../assets/mainbg.jpg')} alt="Skills hub"/>
+                        <img className='mobile-a-user' src={user?.userImage} alt="Skills hub"/>
                         <div className='ml-1'>
-                        <p className='font-bold text-amber-500 text-2xl'>John Main</p>
+                        <p className='font-bold text-amber-500 text-2xl'>{user?.name}</p>
                         <p className='-mt-2 text-zinc-400 font-semibold'>Account User</p>
                     </div>
                      </div>
                     ) : (<>
-                    <button className='bg-indigo-700 w-full py-3 -mt-5 px-3 rounded-full mt-6 text-white'>Join Skillshub</button>
-                    <button className='border-amber-500 w-full py-3  px-3 rounded-full mt-6 mobile-login-btn'>Login here</button>
-
+                        <Link to='/register'><button  onClick={() => setOpen(false)} className='bg-indigo-700 w-full py-3 -mt-5 px-3 rounded-full mt-6 text-white'>Join Skillshub</button></Link>
+                        <Link to='/login'><button onClick={() => setOpen(false)} className='border-amber-500 w-full py-3  px-3 rounded-full mt-6 mobile-login-btn'>Login here</button></Link>
                     </>
                     )}
                     
                 
                  <div className='mt-5'>
-                    <p className='mb-2 text-lg font-medium text-zinc-500 cursor-pointer' >Home</p>
-                    <p className='mb-2 text-lg font-medium text-zinc-500 cursor-pointer' >Find a skill</p>
-                    <p className='mb-2 text-lg font-medium text-zinc-500 cursor-pointer' >Find a paying task</p>
+                    <Link to='/'><p  onClick={() => setOpen(false)} className='mb-2 text-lg font-medium text-zinc-500 cursor-pointer' >Home</p></Link>
+                    <Link to='/engagements'><p onClick={() => setOpen(false)}  className='mb-2 text-lg font-medium text-zinc-500 cursor-pointer' >Find a skill</p></Link>
+                    <Link to='/jobs'><p onClick={() => setOpen(false)}  className='mb-2 text-lg font-medium text-zinc-500 cursor-pointer' >Find a paying task</p></Link>
                  </div>
-                 {user &&  <button className='bg-amber-500 w-full py-3 px-3 rounded-full mt-6 text-white'>Logout</button>}
+                 {user &&  <button onClick={() => logoutUser()} className='bg-amber-500 w-full py-3 px-3 rounded-full mt-6 text-white'>Logout</button>}
             </div>
         </div>
         
