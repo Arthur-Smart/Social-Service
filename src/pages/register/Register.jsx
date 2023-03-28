@@ -60,7 +60,7 @@ function Register({setOpenRegModel}) {
 
   return (
     <div className='register flex flex-col items-center justify-center'>
-        <p className='text-white text-lg'><i class="fa-regular fa-rectangle-xmark"></i></p>
+        <Link to='/'><p className='font-bold text-white mb-1 text-3xl cursor-pointer'>Skills<span className='text-amber-500'>Hub</span></p></Link>
         <div className='register-wrapper bg-white flex flex-col items-center justify-center rounded-md'>
             <div>
                 <p className='font-bold text-xl text-zinc-500 py-2'>Join SkillsHub</p>
