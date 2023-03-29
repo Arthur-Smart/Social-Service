@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './useraccountservices.css'
 import axios from "axios"
 
-function UserAccountService({item}) {
+function UserAccountService({item, setAuthError}) {
   const handleDelete = async () => {
-    await axios.delete(`http://localhost:8800/api/service/delete/${item?._id}`, {withCredentials:true})
+    try {
+      await axios.delete(`https://talented-pink-buckle.cyclic.app/api/service/delete/${item?._id}`, {withCredentials:true})
+    } catch (err) {
+      setAuthError(err.response.data)
+    }
     
   }
   return (

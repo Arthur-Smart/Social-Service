@@ -67,7 +67,7 @@ function Navbar() {
                 
                     {user ? (
                     <div className='flex items-center'>
-                        <img className='mobile-a-user' src={user?.userImage} alt="Skills hub"/>
+                        {user?.userImage ? <img className='mobile-a-user' src={user?.userImage} alt="Skills hub"/> : <img className='mobile-a-user' src={require('../../assets/avatar.jpg')} alt="Skills hub"/>}
                         <div className='ml-1'>
                         <p className='font-bold text-amber-500 text-2xl'>{user?.name}</p>
                         <p className='-mt-2 text-zinc-400 font-semibold'>Account User</p>

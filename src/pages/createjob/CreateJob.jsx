@@ -15,6 +15,7 @@ function CreateJob() {
     const [freelance, setFreelance] = useState(false)
     const [description, setDescription] = useState('')
     const [phone, setPhone] = useState('')
+    const [authError, setAuthError] = useState(null)
 
     const handleAddSkill = (e) => {
         setSkills((prev) => [...prev, skill])
@@ -22,12 +23,16 @@ function CreateJob() {
     }
 
     const handleCreate = async() => {
-        if(title !=='' && budget !=='' && location !=='' && description !=='' && phone !==''){
+        try {
+            if(title !=='' && budget !=='' && location !=='' && description !=='' && phone !==''){
             const res = await axios.post('https://talented-pink-buckle.cyclic.app/api/jobs/', {
             skills, title, budget, isNegotiable, location, freelance, description, phone
-        },{withCredentials:true}); 
-        } else {
-            alert('Please fill all the fields')
+                },{withCredentials:true}); 
+                } else {
+                    alert('Please fill all the fields')
+            }
+        } catch (err) {
+            setAuthError(err.response.data)
         }
         
     }
@@ -97,8 +102,11 @@ function CreateJob() {
                    
                  </div>
         </div>
-        <div className='container py-2'>
+        <div className='container bottom-c-j-items py-2'>
             <button onClick={() => handleCreate()} className='bg-indigo-800 py-2 px-4 rounded-full text-white hover:bg-indigo-700'>Publish</button>
+        </div>
+        <div className='container bottom-c-j-items'>
+            <p className='text-amber-500'>{authError}. Please Login again to continue</p>
         </div>
     </div>
   )

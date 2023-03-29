@@ -4,10 +4,11 @@ import './useraccountjobs.css'
 import { useMutation,useQueryClient } from '@tanstack/react-query';
 
 function UserAccountJobs({job}) {
+  
   const queryClient = useQueryClient() 
 
    const handleDelete = async () => {
-    await axios.delete(`http://localhost:8800/api/jobs/single/${job?._id}`, {withCredentials:true})
+    await axios.delete(`https://talented-pink-buckle.cyclic.app/api/jobs/single/${job?._id}`, {withCredentials:true})
   }
   return (
     <div className='user-account-jobs flex flex-col border-zinc-200'>

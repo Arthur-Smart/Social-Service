@@ -13,6 +13,7 @@ function Create() {
     const [phone, setPhone] = useState('')
     const [image, setImage] = useState(null)
     const [isNegotiable, setIsNegotiable] = useState(false)
+    const [authError, setAuthError] = useState(null)
 
     const handleCheckboxChange = (e) => {
         setIsNegotiable(e.target.checked)
@@ -51,7 +52,7 @@ function Create() {
           setPhone('')
           setImage(null)
      } catch (err) {
-        console.log(err)
+        setAuthError(err.response.data)
      }  
        } else{
              alert('Please fill all fields')
@@ -115,6 +116,9 @@ function Create() {
                 <input onChange={(e) => setImage(e.target.files[0])} className='py-2 px-2  outline-1 bg-white border-2 border-amber-100 text-zinc-500' type='file'/>
             </div>
             <button onClick={() => handleCreate()} className='self-start ml-3 bg-amber-500 py-3 px-7 rounded-full font-medium text-white'>Publish</button>
+        </div>
+        <div className='container'>
+            <p className='text-amber-500'>{authError}. Please Login again to continue</p>
         </div>
     </div>
   )

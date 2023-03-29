@@ -9,6 +9,7 @@ function Account() {
     const user = JSON.parse(localStorage.getItem("currentUser"))
 
     const [select, setSelect] = useState(true)
+    const [authError, setAuthError] = useState(null)
 
     const { isLoading, error, data, refetch } = useQuery({
     queryKey: ['serviceaccount'],
@@ -43,12 +44,14 @@ console.log(select)
         
         <div className='container selection-wrapper flex flex-wrap items-center justify-center gap-2 pt-5'>
            
-           {select ? (data?.map(item => <UserAccountService item={item}/>)) : (dataJob?.map(job => <UserAccountJobs job={job} reftchJob={reftchJob}/>))}
+           {select ? (data?.map(item => <UserAccountService setAuthError={setAuthError} item={item}/>)) : (dataJob?.map(job => <UserAccountJobs job={job} reftchJob={reftchJob}/>))}
             {/*select ? 'services' (data?.map(item => <UserAccountService item={item}/>)) : select ? 'jobs' (dataJob?.map(job => <UserAccountJobs job={job} reftchJob={reftchJob}/>)) : 'yolo'}
            {{data?.map(item => <UserAccountService item={item}/>)}}
             {dataJob?.map(job => <UserAccountJobs job={job} reftchJob={reftchJob}/>)*/}
+           
             
         </div>
+         {authError && <p className='text-amber-500'>{authError}. Please Login again to continue</p>}
     </div>
   )
 }
