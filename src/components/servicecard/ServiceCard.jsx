@@ -12,13 +12,14 @@ function ServiceCard({item}) {
             return res.data;
       })
   });
+
   return (
     <Link to={`/engagement/${item._id}`}>
       {isLoading ? 'Loading...' : error ? 'Something went wrong' : (
           <div className='service-card border-gray-200 s-card-border cursor-pointer'>
           <img className='service-img' src={item?.image} alt='skills hub'/>
           <div className='name-profile flex items-center p-2'>
-              <img className='service-owner-pic' src={data?.userImage} alt='skills hub'/>
+              {data?.userImage ? <img className='service-owner-pic' src={data?.userImage} alt='skills hub'/> : <img className='service-owner-pic' src={require('../../assets/avatar.jpg')} alt='Skills hub'/>}
               <p className='ml-2 text-zinc-500'>{data?.name}</p>
           </div>
           <div className='name-profile px-2'>

@@ -16,10 +16,10 @@ function UserAccountService({item}) {
         <div className='u-a-middle'>
             <img src={item?.image} alt='Skills hub'/>
         </div>
-        <div className='u-a-bottom flex items-center justify-between py-1 px-2'>
+        {/*<div className='u-a-bottom flex items-center justify-between py-1 px-2'>
             <p className='text-zinc-400'><i class="fa-solid fa-heart text-amber-500"></i> {"[200 loves]"}</p>
             <p className='text-zinc-400'><i class="fa-solid fa-comments text-amber-500"></i> {"[200 Reviews]"}</p>
-        </div>
+        </div>*/}
     </div>
   )
 }

@@ -18,9 +18,9 @@ function UserAccountJobs({job}) {
         <div className='u-a-j-middle p-2'>
             <p>{job?.description.substring(0,150)}...</p>
         </div>
-        <div className='u-a-j-bottom flex items-center justify-between py-1 px-2'>
+        {/*<div className='u-a-j-bottom flex items-center justify-between py-1 px-2'>
             <p className='text-zinc-400'><i class="fa-solid fa-file-waveform text-amber-500"></i> {"[120 Application]"}</p>
-        </div>
+        </div>*/}
     </div>
   )
 }

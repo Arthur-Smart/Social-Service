@@ -49,12 +49,13 @@ function Navbar() {
                     </>
                     )
                  }
-                
+                {user && 
                 <Link to={`/account/${user?._id}`}>
                 <div className='flex items-center notifications bg-amber-500 ml-6'>
-                   {user && <img className='user-nav-pic' src={user?.userImage} alt='Skills hub'/>}
+                   {user?.userImage ? <img className='user-nav-pic' src={user?.userImage} alt='Skills hub'/> : <img className='user-nav-pic' src={require('../../assets/avatar.jpg')} alt='Skills hub'/>}
                 </div>
-                </Link>                
+                </Link>       
+                }         
             </div>
             <p onClick={() => openMobileMenu()} className='bars flex text-3xl text-zinc-600 cursor-pointer'><i class="fa-solid fa-bars-staggered fa-rotate-180"></i></p>
         </div>

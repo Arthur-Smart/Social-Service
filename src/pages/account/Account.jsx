@@ -8,7 +8,7 @@ import './account.css'
 function Account() {
     const user = JSON.parse(localStorage.getItem("currentUser"))
 
-    const [select, setSelect] = useState(false)
+    const [select, setSelect] = useState(true)
 
     const { isLoading, error, data, refetch } = useQuery({
     queryKey: ['serviceaccount'],
@@ -37,7 +37,7 @@ console.log(select)
           <div className='container  flex flex-wrap gap-2 select-btn-navigation items-center '>
                 <button onClick={()=>setSelect(true)} className={select ? ' py-3 px-4 bg-amber-600 text-white rounded-full' : 'rounded-full py-3 px-4 bg-indigo-600 text-white'}>Posted Services</button>  
                 <button  onClick={()=>setSelect(false)} className={!select ? 'py-3 px-4 bg-amber-600 text-white rounded-full' : 'rounded-full py-3 px-4 bg-indigo-600 text-white '}>Posted Jobs</button>  
-                <button  className='py-3 px-4 bg-green-400 text-white rounded-full'>Application</button>  
+                {/*<button  className='py-3 px-4 bg-green-400 text-white rounded-full'>Application</button>*/}
           </div>
         </div>
         

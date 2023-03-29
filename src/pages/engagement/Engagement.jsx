@@ -45,7 +45,7 @@ function Engagement() {
               <div className='engagement-desc'>
                   <p className='font-bold text-xl text-zinc-500'>{data?.title}</p>
                   {isLoadingUser ? 'Loading' : errorUser ? 'Something went wrong' : (<div className='flex items-center mt-2 border-2 p-2'>
-                    <img className='engagement-p-pic' src={dataUser?.userImage} />
+                    {dataUser?.userImage ? <img className='engagement-p-pic' src={dataUser?.userImage} alt='SkillsHub' /> : <img  className='engagement-p-pic' src={require('../../assets/avatar.jpg')} alt='Skills hub'/>}
                     <p className='font-bold text-black ml-2 font-bold text-lg'>{dataUser?.names}</p>
                     <div className='flex items-center ml-2'>
                       <p className='text-amber-500 font-bold' ><i class="fa-solid fa-star"></i></p>

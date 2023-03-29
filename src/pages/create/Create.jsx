@@ -35,9 +35,10 @@ function Create() {
          } catch (err) {
               console.log(err)
          }
-       }    
-
-       try {
+       }  
+       
+       if( title !=='' && price !=='' && category !== '' && location !== '' && description !== ''  && shortDescription !== '' && phone !== '' && image !== null){
+            try {
           const res = await axios.post('http://localhost:8800/api/service/', serviceData ,{withCredentials:true})
           console.log(res)
           setTitle('')
@@ -47,9 +48,16 @@ function Create() {
           setPrice('')
           setDescription('')
           setShortDescription('')
+          setPhone('')
+          setImage(null)
      } catch (err) {
         console.log(err)
      }  
+       } else{
+             alert('Please fill all fields')
+       }
+
+      
  }
 
     

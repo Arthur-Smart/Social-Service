@@ -14,18 +14,22 @@ function CreateJob() {
     const [location, setLocation] = useState('')
     const [freelance, setFreelance] = useState(false)
     const [description, setDescription] = useState('')
-    const [phone, setPhone] = useState('0758869958')
+    const [phone, setPhone] = useState('')
 
     const handleAddSkill = (e) => {
         setSkills((prev) => [...prev, skill])
+        setSkill('')
     }
 
     const handleCreate = async() => {
-        const res = await axios.post('http://localhost:8800/api/jobs/', {
+        if(title !=='' && budget !=='' && location !=='' && description !=='' && phone !==''){
+            const res = await axios.post('http://localhost:8800/api/jobs/', {
             skills, title, budget, isNegotiable, location, freelance, description, phone
         },{withCredentials:true}); 
-
-        console.log(res)
+        } else {
+            alert('Please fill all the fields')
+        }
+        
     }
 
     const handleCheckboxChange = (e) =>{
@@ -63,6 +67,7 @@ function CreateJob() {
                     <input onChange={(e) => setSkill(e.target.value)}
                         className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500'
                         type='text'
+                        value={skill}
                         placeholder='Type skill requirement'/>
                     <button onClick={() => handleAddSkill()}  className='py-2 px-4 bg-amber-500 outline-amber-100'>Add</button>
                 </div>
