@@ -47,7 +47,7 @@ function Register() {
        }
 
        try {
-          const res = await axios.post('http://localhost:8800/api/auth/register', userData)
+          const res = await axios.post('https://talented-pink-buckle.cyclic.app/api/auth/register', userData)
           console.log(res)
           setName('')
           setEmail('')

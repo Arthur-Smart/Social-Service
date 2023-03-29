@@ -13,7 +13,7 @@ function Account() {
     const { isLoading, error, data, refetch } = useQuery({
     queryKey: ['serviceaccount'],
     queryFn: () =>
-      axios(`http://localhost:8800/api/service?userId=${user?._id}`).then((res) => {
+      axios(`https://talented-pink-buckle.cyclic.app/api/service?userId=${user?._id}`).then((res) => {
         return res.data;
       })
   });
@@ -21,7 +21,7 @@ function Account() {
   const { isLoading:isLoadingJob, error:errorJob, data:dataJob, refetch:reftchJob } = useQuery({
     queryKey: ['jobaccount'],
     queryFn: () =>
-      axios(`http://localhost:8800/api/jobs?userId=${user?._id}`).then((res) => {
+      axios(`https://talented-pink-buckle.cyclic.app/api/jobs?userId=${user?._id}`).then((res) => {
         return res.data;
       })
      

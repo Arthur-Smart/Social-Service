@@ -15,7 +15,7 @@ function JobPage() {
       const { isLoading, error, data, refetch } = useQuery({
         queryKey: ['singleJob'],
         queryFn: () =>
-        axios(`http://localhost:8800/api/jobs/single/${id}`).then((res) => {
+        axios(`https://talented-pink-buckle.cyclic.app/api/jobs/single/${id}`).then((res) => {
         return res.data;
       })
   })
@@ -23,7 +23,7 @@ function JobPage() {
     const { isLoading:isLoadingAll, error:errorAll, data:dataAll } = useQuery({
         queryKey: ['allJobs'],
         queryFn: () =>
-        axios(`http://localhost:8800/api/jobs/`).then((res) => {
+        axios(`https://talented-pink-buckle.cyclic.app/api/jobs/`).then((res) => {
         return res.data;
       })
   })
@@ -36,7 +36,7 @@ function JobPage() {
   const { isLoading:isLoadingUser, error:errorUser, data:dataUser} = useQuery({
     queryKey: ['jobuser'],
     queryFn: () =>
-      axios(`http://localhost:8800/api/user/${data.userId}`).then((res) => {
+      axios(`https://talented-pink-buckle.cyclic.app/api/user/${data.userId}`).then((res) => {
         return res.data;
       })
   })

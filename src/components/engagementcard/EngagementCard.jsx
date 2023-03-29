@@ -8,7 +8,7 @@ function EngagementCard({item}) {
  const { isLoading, error, data, refetch } = useQuery({
     queryKey: ['serviceOwner'],
     queryFn: () =>
-      axios(`http://localhost:8800/api/user/${item?.userId}`).then((res) => {
+      axios(`https://talented-pink-buckle.cyclic.app/api/user/${item?.userId}`).then((res) => {
         return res.data;
       })
   });
@@ -17,7 +17,7 @@ function EngagementCard({item}) {
    const { isLoading:isLoadingReview, error:errorReview, data:dataReview} = useQuery({
         queryKey: ['reviews'],
         queryFn: () =>
-        axios(`http://localhost:8800/api/reviews/${item?._id}`).then((res) => {
+        axios(`https://talented-pink-buckle.cyclic.app/api/reviews/${item?._id}`).then((res) => {
             return res.data;
       })
   });

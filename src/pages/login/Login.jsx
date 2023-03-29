@@ -13,7 +13,7 @@ function Login({setOpenLoginModel}) {
 
     const handleLogin = async () =>{
         try {
-            const res = await axios.post('http://localhost:8800/api/auth/login', {
+            const res = await axios.post('https://talented-pink-buckle.cyclic.app/api/auth/login', {
                 name , password
             },{withCredentials:true});
             localStorage.setItem("currentUser", JSON.stringify(res.data));

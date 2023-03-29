@@ -19,7 +19,7 @@ function Navbar() {
 
     const logoutUser = () => {
         try {
-            axios.post('http://localhost:8800/api/auth/logout', {withCredentials:true});
+            axios.post('https://talented-pink-buckle.cyclic.app/api/auth/logout', {withCredentials:true});
             localStorage.setItem("currentUser", null)
             window.location.replace('/')
         } catch (err) {

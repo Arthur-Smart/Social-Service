@@ -15,7 +15,7 @@ function Engagements() {
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ['services'],
     queryFn: () =>
-      axios(`http://localhost:8800/api/service${search}`).then((res) => {
+      axios(`https://talented-pink-buckle.cyclic.app/api/service${search}`).then((res) => {
         return res.data;
       })
   })

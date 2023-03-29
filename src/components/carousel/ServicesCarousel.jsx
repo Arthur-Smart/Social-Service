@@ -12,7 +12,7 @@ function ServicesCarousel() {
   const { isLoading, error, data, refetch } = useQuery({
         queryKey: ['randomservice'],
         queryFn: () =>
-        axios(`http://localhost:8800/api/service/`).then((res) => {
+        axios(`https://talented-pink-buckle.cyclic.app/api/service/`).then((res) => {
             return res.data;
       })
   });

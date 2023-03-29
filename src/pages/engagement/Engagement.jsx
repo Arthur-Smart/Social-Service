@@ -17,7 +17,7 @@ function Engagement() {
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ['service'],
     queryFn: () =>
-      axios(`http://localhost:8800/api/service/single/${id}`).then((res) => {
+      axios(`https://talented-pink-buckle.cyclic.app/api/service/single/${id}`).then((res) => {
         return res.data;
       })
   })
@@ -25,7 +25,7 @@ function Engagement() {
   const { isLoading:isLoadingUser, error:errorUser, data:dataUser} = useQuery({
     queryKey: ['user'],
     queryFn: () =>
-      axios(`http://localhost:8800/api/user/${data.userId}`).then((res) => {
+      axios(`https://talented-pink-buckle.cyclic.app/api/user/${data.userId}`).then((res) => {
         return res.data;
       })
   })

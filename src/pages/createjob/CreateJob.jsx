@@ -23,7 +23,7 @@ function CreateJob() {
 
     const handleCreate = async() => {
         if(title !=='' && budget !=='' && location !=='' && description !=='' && phone !==''){
-            const res = await axios.post('http://localhost:8800/api/jobs/', {
+            const res = await axios.post('https://talented-pink-buckle.cyclic.app/api/jobs/', {
             skills, title, budget, isNegotiable, location, freelance, description, phone
         },{withCredentials:true}); 
         } else {
