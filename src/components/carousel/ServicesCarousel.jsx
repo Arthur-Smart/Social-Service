@@ -17,8 +17,6 @@ function ServicesCarousel() {
       })
   });
 
-  console.log(JSON.parse(localStorage.getItem('currentUser')))
-
   const randomData = data?.sort(() => Math.random() - 0.5).slice(0, 10);
 
  

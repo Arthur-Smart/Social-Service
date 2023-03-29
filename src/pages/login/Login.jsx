@@ -23,7 +23,6 @@ function Login({setOpenLoginModel}) {
             console.log(err.response.data)
         }
         setOpenLoginModel(false)
-        console.log(JSON.parse(localStorage.getItem('currentUser')))
     }
   return (
     <div className='login flex flex-col items-center justify-center'>
