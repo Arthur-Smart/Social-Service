@@ -43,7 +43,7 @@ function About() {
                </div>
             </div>
             <div className='about-right flex items-end justify-end'>
-                <img className='why-image' src={require('../../assets/about-img.png')} alt='skills hub'/>
+                <img className='why-image' src={require('../../assets/business-deal.png')} alt='skills hub'/>
             </div>
          </div>
         </div>

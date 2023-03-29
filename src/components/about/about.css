@@ -11,6 +11,10 @@
     width: 60%;
 }
 
+.why-image {
+    width: 80%;
+}
+
 .why-image{
     animation: motion 2s linear infinite alternate;
 }
@@ -50,6 +54,10 @@
         .about-right {
             width: 100%;
         }
+
+                .why-image {
+                    width: 100%;
+                }
 }
 
 @media screen and (max-width:515px){
