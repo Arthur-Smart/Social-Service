@@ -23,6 +23,7 @@ import Account from './pages/account/Account';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import Jobs from './pages/jobs/Jobs';
+import ScrollToTop from './ScrollToTop';
 
 
 
@@ -33,6 +34,7 @@ function App() {
     return (
       <>
         <QueryClientProvider client={queryClient}>
+        <ScrollToTop/>
           <Navbar/>
           <Outlet/>
           <Footer/>
