@@ -30,7 +30,7 @@ function CreateJob() {
         }
         try {
             if(title !=='' && budget !=='' && location !=='' && description !=='' && phone !==''){
-            const res = await axios.post('https://talented-pink-buckle.cyclic.app/api/jobs/', {
+            const res = await axios.post('https://serviceapi.onrender.com/api/jobs/', {
             skills, title, budget, isNegotiable, location, freelance, description, phone
                 },{withCredentials:true}); 
                 } else {

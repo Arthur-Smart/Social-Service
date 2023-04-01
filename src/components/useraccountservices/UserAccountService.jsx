@@ -5,7 +5,7 @@ import axios from "axios"
 function UserAccountService({item, setAuthError}) {
   const handleDelete = async () => {
     try {
-      await axios.delete(`https://talented-pink-buckle.cyclic.app/api/service/delete/${item?._id}`, {withCredentials:true})
+      await axios.delete(`https://serviceapi.onrender.com/api/service/delete/${item?._id}`, {withCredentials:true})
     } catch (err) {
       setAuthError(err.response.data)
     }

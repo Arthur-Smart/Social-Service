@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import './login.css'
 
-function Login({setOpenLoginModel}) {
+function Login() {
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState(null)
@@ -13,7 +13,7 @@ function Login({setOpenLoginModel}) {
 
     const handleLogin = async () =>{
         try {
-            const res = await axios.post('https://talented-pink-buckle.cyclic.app/api/auth/login', {
+            const res = await axios.post('https://serviceapi.onrender.com/api/auth/login', {
                 name , password
             },{withCredentials:true});
             localStorage.setItem("currentUser", JSON.stringify(res.data));
@@ -22,7 +22,6 @@ function Login({setOpenLoginModel}) {
             setError(err.response.data)
             console.log(err.response.data)
         }
-        setOpenLoginModel(false)
     }
   return (
     <div className='login flex flex-col items-center justify-center'>

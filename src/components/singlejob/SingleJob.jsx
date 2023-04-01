@@ -8,7 +8,7 @@ function SingleJob({job}) {
     const { isLoading, error, data, refetch } = useQuery({
         queryKey: ['userJobOwner'],
         queryFn: () =>
-        axios(`https://talented-pink-buckle.cyclic.app/api/user/${job?.userId}`).then((res) => {
+        axios(`https://serviceapi.onrender.com/api/user/${job?.userId}`).then((res) => {
             return res.data;
       })
   });

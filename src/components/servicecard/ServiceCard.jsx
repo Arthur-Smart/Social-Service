@@ -8,7 +8,7 @@ function ServiceCard({item}) {
   const { isLoading, error, data, refetch } = useQuery({
         queryKey: ['userJobOwner'],
         queryFn: () =>
-        axios(`https://talented-pink-buckle.cyclic.app/api/user/${item.userId}`).then((res) => {
+        axios(`https://serviceapi.onrender.com/api/user/${item.userId}`).then((res) => {
             return res.data;
       })
   });

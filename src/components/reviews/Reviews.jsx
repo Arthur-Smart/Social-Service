@@ -13,14 +13,14 @@ function Reviews({serviceId}) {
      const { isLoading, error, data, refetch } = useQuery({
         queryKey: ['reviews'],
         queryFn: () =>
-        axios(`https://talented-pink-buckle.cyclic.app/api/reviews/${serviceId}`).then((res) => {
+        axios(`https://serviceapi.onrender.com/api/reviews/${serviceId}`).then((res) => {
             return res.data;
       })
   });
 
   const mutation = useMutation({
     mutationFn: (review) => {
-      return axios.post('https://talented-pink-buckle.cyclic.app/api/reviews',review, {withCredentials:true})
+      return axios.post('https://serviceapi.onrender.com/api/reviews',review, {withCredentials:true})
     },
     onSuccess:() => {
       queryClient.invalidateQueries(["reviews"])

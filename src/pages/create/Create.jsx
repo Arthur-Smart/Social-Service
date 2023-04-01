@@ -45,7 +45,7 @@ function Create() {
        
        if( title !=='' && price !=='' && category !== '' && location !== '' && description !== ''  && shortDescription !== '' && phone !== '' && image !== null){
             try {
-          const res = await axios.post('https://talented-pink-buckle.cyclic.app/api/service/', serviceData ,{withCredentials:true})
+          const res = await axios.post('https://serviceapi.onrender.com/api/service/', serviceData ,{withCredentials:true})
           console.log(res)
           setTitle('')
           setCategory('')

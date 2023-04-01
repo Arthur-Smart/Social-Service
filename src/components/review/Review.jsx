@@ -9,13 +9,13 @@ function Review({review}) {
   const { isLoading, error, data, refetch } = useQuery({
         queryKey: ['userReviews'],
         queryFn: () =>
-        axios(`https://talented-pink-buckle.cyclic.app/api/user/${review?.userId}`).then((res) => {
+        axios(`https://serviceapi.onrender.com/api/user/${review?.userId}`).then((res) => {
             return res.data;
       })
   });
 
   const handleDelete = async () =>{
-    await axios.delete(`https://talented-pink-buckle.cyclic.app/api/reviews/${review?.userId}`, {withCredentials:true})
+    await axios.delete(`https://serviceapi.onrender.com/api/reviews/${review?.userId}`, {withCredentials:true})
   }
 
   return (

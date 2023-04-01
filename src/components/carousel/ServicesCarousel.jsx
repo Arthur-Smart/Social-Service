@@ -12,7 +12,7 @@ function ServicesCarousel() {
   const { isLoading, error, data, refetch } = useQuery({
         queryKey: ['randomservice'],
         queryFn: () =>
-        axios(`https://talented-pink-buckle.cyclic.app/api/service/`).then((res) => {
+        axios(`https://serviceapi.onrender.com/api/service/`).then((res) => {
             return res.data;
       })
   });
