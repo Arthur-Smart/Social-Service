@@ -59,6 +59,10 @@
     width: 20%;
 }
 
+.skills{
+    width:inherit;
+}
+
 .skill-text{
     width:fit-content;
 }
@@ -66,5 +70,58 @@
 @media screen and (max-width:854px){
     .bottom-c-j-items{
         width:90%;
+    }
+
+    .create-job-m-wrapper{
+        width:90%;
+    }
+}
+
+@media screen and (max-width:520px){
+    .c-job-title-budget{
+        flex-direction: column;
+    }
+
+    .c-job-title-budget input{
+        width:100%;
+        margin-top: 4px;
+    }
+
+    .location-phone{
+        flex-direction: column;
+        gap:0;
+    }
+
+    .location-phone input {
+        width: 100%;
+        margin-top: 4px;
+    }
+
+    .freelance-negotiable{
+        flex-direction: column;
+    }
+
+    .negotiable{
+    width:100%;
+    }
+
+    .fleelance{
+        width:100%;
+    }
+}
+
+@media screen and (max-width:510px) {
+    .post-link-wrapper {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .post-s-link {
+        font-size: 20px;
+    }
+
+    .post-j-link {
+        font-size: 20px;
+        margin-left: 0;
     }
 }

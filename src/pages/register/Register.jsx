@@ -52,7 +52,7 @@ function Register() {
           setName('')
           setEmail('')
           setPassword('')
-            navigate('/')
+            navigate('/login')
      } catch (err) {
        setError(err.response.data)
         //console.log(err.response.data)

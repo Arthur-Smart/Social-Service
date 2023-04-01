@@ -63,3 +63,55 @@
 .location-image input {
     width: 49%;
 }
+
+@media screen and (max-width:854px){
+    .create-m-wrapper{
+        width:90%;
+    }
+}
+
+@media screen and (max-width:520px){
+    .title-price-inputs{
+        flex-direction: column;
+    }
+
+    .title-price-inputs input{
+        width:100%;
+        margin-top: 4px;
+    }
+
+    .phone-isnegotiable-inputs{
+        flex-direction: column;
+    }
+
+    .phone-isnegotiable-inputs-input{
+    width:100%;
+    }
+
+    .is-negotiable{
+        width:100%;
+    }
+
+    .location-image{
+        flex-direction: column;
+    }
+
+          .location-image input{
+            width:100%;
+            margin-top: 4px;
+          }
+}
+
+@media screen and (max-width:510px){
+    .post-link-wrapper{
+        flex-direction: column;
+        align-items: start;
+    }
+    .post-s-link{
+        font-size: 20px;
+    }
+    .post-j-link{
+        font-size: 20px;
+        margin-left: 0;
+    }
+}

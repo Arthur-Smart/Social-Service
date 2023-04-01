@@ -15,11 +15,16 @@ function Create() {
     const [isNegotiable, setIsNegotiable] = useState(false)
     const [authError, setAuthError] = useState(null)
 
+    const inputValidation = document.getElementById('create-cost')
+
     const handleCheckboxChange = (e) => {
         setIsNegotiable(e.target.checked)
     }
 
     const handleCreate = async() => {
+        if(inputValidation < 0){
+            alert("There price cannot be a negative value. Enter a positive number")
+        }
         const serviceData = {
             title, price, category, location, description, shortDescription, isNegotiable, phone
         };
@@ -67,18 +72,19 @@ function Create() {
 
   return (
     <div className='create flex flex-col items-center justify-center'>
-        <div className='container mt-10 mb-3 flex items-center'>
-            <p className='font-medium text-xl text-zinc-500'>Post a new skill engagement</p>
-            <Link to='/create-job'><p className='font-medium text-xl  ml-4 text-indigo-600 cursor-pointer underline'><i class="fa-solid fa-chevron-left"></i> Post job instead</p></Link>
+    <div className='container create-m-wrapper flex flex-col items-center justify-center'>
+        <div className='container post-link-wrapper  mt-10 mb-3 flex items-center'>
+            <p className='font-medium post-s-link text-xl text-zinc-500'>Post a new skill engagement</p>
+            <Link to='/create-job'><p className='font-medium text-xl post-j-link ml-4 text-indigo-600 cursor-pointer underline'><i class="fa-solid fa-chevron-left"></i> Post job instead</p></Link>
         </div>
         <div className='container bg-gray-100 flex flex-col items-center justify-center py-4'>
             <div className='title-price-inputs flex items-center justify-between px-3 pb-2'>
                 <input value={title} onChange={(e) => setTitle(e.target.value)} className='py-2 px-2  outline-1  outline-amber-100 text-zinc-500' type='text' placeholder='Type title'/>
-                <input value={price} onChange={(e) => setPrice(e.target.value)} className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500' type='number' placeholder='Enter price'/>
+                <input value={price} onChange={(e) => setPrice(e.target.value)} id='create-cost' className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500' type='number' min='0' placeholder='Enter price'/>
             </div>
             <div className='phone-isnegotiable-inputs flex items-center justify-between px-3 pb-2'>
                 <input  onChange={(e) => setPhone(e.target.value)} className='py-2 px-2  outline-1  outline-amber-100 text-zinc-500 phone-isnegotiable-inputs-input' type='text' placeholder='WhatApp business number'/>
-                <div className='flex items-center is-negotiable'>
+            <div className='flex items-center is-negotiable'>
                 <input value={setIsNegotiable}  className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500'
                         onChange={handleCheckboxChange}
                         type='checkbox'
@@ -119,6 +125,7 @@ function Create() {
         </div>
         <div className='container'>
             <p className='text-amber-500'>{authError}. Please Login again to continue</p>
+        </div>
         </div>
     </div>
   )
