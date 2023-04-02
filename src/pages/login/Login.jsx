@@ -12,8 +12,9 @@ function Login() {
     const navigate = useNavigate()
 
     const handleLogin = async () =>{
+        const loginData = {name, password}
         try {
-            const res = await axios.post('https://serviceapi.onrender.com/api/auth/login',{ name , password},{withCredentials:true});
+            const res = await axios.post('https://serviceapi.onrender.com/api/auth/login', loginData ,{withCredentials:true});
             localStorage.setItem("currentUser", JSON.stringify(res.data));
             navigate('/')
         } catch (err) {
