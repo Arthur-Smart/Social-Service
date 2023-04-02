@@ -13,9 +13,7 @@ function Login() {
 
     const handleLogin = async () =>{
         try {
-            const res = await axios.post('https://serviceapi.onrender.com/api/auth/login', {
-                name , password
-            },{withCredentials:true});
+            const res = await axios.post('https://serviceapi.onrender.com/api/auth/login',{ name , password},{withCredentials:true});
             localStorage.setItem("currentUser", JSON.stringify(res.data));
             navigate('/')
         } catch (err) {
