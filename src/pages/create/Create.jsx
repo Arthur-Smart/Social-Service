@@ -123,9 +123,9 @@ function Create() {
             </div>
             <button onClick={() => handleCreate()} className='self-start ml-3 bg-amber-500 py-3 px-7 rounded-full font-medium text-white'>Publish</button>
         </div>
-        <div className='container'>
+        {/*<div className='container'>
             <p className='text-amber-500'>{authError}. Please Login again to continue</p>
-        </div>
+        </div>*/}
         </div>
     </div>
   )
