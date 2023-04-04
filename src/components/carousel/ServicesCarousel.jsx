@@ -9,13 +9,22 @@ import {Link} from 'react-router-dom'
 import axios from "axios"
 
 function ServicesCarousel() {
-  const { isLoading, error, data, refetch } = useQuery({
-        queryKey: ['randomservice'],
-        queryFn: () =>
-        axios('https://serviceapi.onrender.com/api/service').then((res) => {
-            return res.data;
-      })
-  });
+  const [data, setData] = useState([])
+  //const { isLoading, error, data, refetch } = useQuery({
+  //      queryKey: ['randomservice'],
+  //      queryFn: () =>
+  //      axios('https://serviceapi.onrender.com/api/service').then((res) => {
+  //          return res.data;
+  //    })
+  //});
+
+  useEffect(() => {
+    const getService = async ()=> {
+      const res = axios('https://serviceapi.onrender.com/api/service');
+      setData(res.data)
+    }
+    getService()
+  },[])
 
   const randomData = data?.sort(() => Math.random() - 0.5).slice(0, 10);
 
