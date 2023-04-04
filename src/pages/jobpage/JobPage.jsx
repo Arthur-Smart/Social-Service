@@ -36,7 +36,7 @@ function JobPage() {
   const { isLoading:isLoadingUser, error:errorUser, data:dataUser} = useQuery({
     queryKey: ['jobuser'],
     queryFn: () =>
-      axios(`https://serviceapi.onrender.com/api/user/${data.userId}`).then((res) => {
+      axios(`https://serviceapi.onrender.com/api/user/${data?.userId}`).then((res) => {
         return res.data;
       })
   })

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { useQuery } from '@tanstack/react-query'
 import axios from "axios"
 import SingleJob from '../singlejob/SingleJob'
@@ -6,13 +6,23 @@ import {Link} from 'react-router-dom'
 import './postedjobs.css'
 
 function PostedJobs() {
-  const { isLoading, error, data, refetch } = useQuery({
-        queryKey: ['postedJobs'],
-        queryFn: () =>
-        axios(`https://serviceapi.onrender.com/api/jobs/`).then((res) => {
-            return res.data;
-      })
-  });
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+    const getData = async ()=> {
+      const res = await axios('https://serviceapi.onrender.com/api/jobs');
+      setData(res.data)
+    }
+    getData()
+  },[])
+
+  //const { isLoading, error, data, refetch } = useQuery({
+  //      queryKey: ['postedJobs'],
+  //      queryFn: () =>
+  //      axios(`https://serviceapi.onrender.com/api/jobs/`).then((res) => {
+  //          return res.data;
+  //    })
+  //});
 
  const randomData = data?.sort(() => Math.random() - 0.5).slice(0, 6);
 
