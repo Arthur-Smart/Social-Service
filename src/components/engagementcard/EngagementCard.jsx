@@ -18,7 +18,7 @@ function EngagementCard({item}) {
         queryKey: ['reviews'],
         queryFn: () =>
         axios(`https://serviceapi.onrender.com/api/reviews/${item?._id}`).then((res) => {
-            return res.data;
+            return res.dataReview;
       })
   });
   
@@ -35,7 +35,7 @@ function EngagementCard({item}) {
             </div>
         </div>
         <div className='p-2'>
-            <p className='text-zinc-600'>{item?.description.substring(0,150)}...</p>
+            <p className='text-zinc-600'>{item?.shortDescription.substring(0,150)}...</p>
         </div>
         <div className='w-full engagement-c-like-comment flex items-center justify-between p-2'>
             <p className='text-zinc-600 cursor-pointer font-medium' ><i class="fa-solid fa-heart"></i> 12</p>
