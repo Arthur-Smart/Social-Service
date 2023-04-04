@@ -26,7 +26,7 @@ function Engagement() {
     queryKey: ['user'],
     queryFn: () =>
       axios(`https://serviceapi.onrender.com/api/user/${data?.userId}`).then((res) => {
-        return res.data;
+        return res.dataUser;
       })
   })
 
@@ -39,7 +39,7 @@ function Engagement() {
   return (
     <div className='engagement flex flex-col items-center justify-center'>
         <div className='container m-eng-wrapper'></div>
-       {isLoading ? "Loading" : error ? "Something went long" : <div className='container container-wrapper flex justify-between  mt-10'>
+       <div className='container container-wrapper flex justify-between  mt-10'>
             <div className='engagement-left'>
               <div className='engagement-desc'>
                   <p className='font-bold text-xl text-zinc-500'>{data?.title}</p>
@@ -87,7 +87,7 @@ function Engagement() {
                   ) : show &&  <p>Please login to continue</p>}                  
                   </div>
             </div>
-        </div>}
+        </div>
     </div>
   )
 }
