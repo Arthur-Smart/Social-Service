@@ -25,7 +25,7 @@ function Engagement() {
   const { isLoading:isLoadingUser, error:errorUser, data:dataUser} = useQuery({
     queryKey: ['user'],
     queryFn: () =>
-      axios(`https://serviceapi.onrender.com/api/user/${data.userId}`).then((res) => {
+      axios(`https://serviceapi.onrender.com/api/user/${data?.userId}`).then((res) => {
         return res.data;
       })
   })
@@ -35,7 +35,6 @@ function Engagement() {
     window.location.href = `mailto:${ownerEmail}`
   }
 
-  const phone = '+254742068914'
   
   return (
     <div className='engagement flex flex-col items-center justify-center'>
@@ -44,19 +43,11 @@ function Engagement() {
             <div className='engagement-left'>
               <div className='engagement-desc'>
                   <p className='font-bold text-xl text-zinc-500'>{data?.title}</p>
-                  {isLoadingUser ? 'Loading' : errorUser ? 'Something went wrong' : (<div className='flex items-center mt-2 border-2 p-2'>
+                  <div className='flex items-center mt-2 border-2 p-2'>
                     {dataUser?.userImage ? <img className='engagement-p-pic' src={dataUser?.userImage} alt='SkillsHub' /> : <img  className='engagement-p-pic' src={require('../../assets/avatar.jpg')} alt='Skills hub'/>}
                     <p className='font-bold text-black ml-2 font-bold text-lg'>{dataUser?.names}</p>
-                    <div className='flex items-center ml-2'>
-                      <p className='text-amber-500 font-bold' ><i class="fa-solid fa-star"></i></p>
-                      <p className='text-amber-500 font-bold' ><i class="fa-solid fa-star"></i></p>
-                      <p className='text-amber-500 font-bold' ><i class="fa-solid fa-star"></i></p>
-                      <p className='text-amber-500 font-bold' ><i class="fa-solid fa-star"></i></p>
-                      <p className='text-amber-500 font-bold' ><i class="fa-solid fa-star"></i></p>
-                      <p className='text-amber-500 font-bold' >(5)</p>
-                    </div>
                     <Link to={`/engagements?userId=${data?.userId}`}><button className='py-1 px-2 bg-red-500 ml-2 rounded-md text-white'>All my <span className='font-bold'>engagements</span></button></Link>
-                  </div>)}
+                  </div>
                   <img className='engagement-s-img mt-5' src={data?.image} alt='skills hub'/>
                   <p className='text-zinc-500 text-xl font-bold'>Engagement description</p>
                   <p>{data?.shortDescription}</p>
@@ -89,11 +80,11 @@ function Engagement() {
                   <button onClick={() => setShow(!show)} className='engagement-btn-btn py-3 text-white'>Contact Me</button>
                   {show && user !==null ? (
                       <div className='bg-gray-100 mt-2 p-2 contact-me flex items-center justify-between show'>
-                    <a href={`tel:${phone}`}><p className='text-lg text-zinc-600 cursor-pointer' ><i class="fa-solid fa-phone-volume"></i></p></a>
+                    <a href={`tel:${data?.phone}`}><p className='text-lg text-zinc-600 cursor-pointer' ><i class="fa-solid fa-phone-volume"></i></p></a>
                     <p onClick={() => handleEmail()} className='text-lg text-zinc-600 cursor-pointer' ><i class="fa-regular fa-envelope"></i></p>
-                    <a href={`whatsapp.com/send?phone=${phone}`}><p className='text-lg text-zinc-600 cursor-pointer' ><i class="fa-brands fa-square-whatsapp"></i></p></a>
+                    <a href={`whatsapp.com/send?phone=${data?.phone}`}><p className='text-lg text-zinc-600 cursor-pointer' ><i class="fa-brands fa-square-whatsapp"></i></p></a>
                   </div>
-                  ) : show && <p>Please login to continue</p>}                  
+                  ) : show &&  <p>Please login to continue</p>}                  
                   </div>
             </div>
         </div>}

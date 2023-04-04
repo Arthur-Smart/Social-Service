@@ -12,7 +12,7 @@ function ServicesCarousel() {
   const { isLoading, error, data, refetch } = useQuery({
         queryKey: ['randomservice'],
         queryFn: () =>
-        axios(`https://serviceapi.onrender.com/api/service/`).then((res) => {
+        axios('https://serviceapi.onrender.com/api/service').then((res) => {
             return res.data;
       })
   });
@@ -21,7 +21,7 @@ function ServicesCarousel() {
 
  
  const items = randomData?.map((item) => (
-  <ServiceCard key={item.id} item={item} />  
+  <ServiceCard key={item?.id} item={item} />  
  ))
 
     const responsive = {
@@ -41,7 +41,7 @@ function ServicesCarousel() {
         <div className='container s-text-wrapper'>
             <p className='text-3xl font-bold text-zinc-600'>Find Your Next Skilled Partner for Success</p>
             <p className='text-zinc-500'>Discover the Satisfying and Fulfilling Experience of Finding Amazing Skills in Kenya and Your Location</p>
-        </div>{isLoading ? 'Loading' : error ? 'something went wrong' : (
+        </div>
           <div className='container s-carousel-wrapper flex items-center flex-col mt-5'>
              <AliceCarousel 
                 mouseTracking
@@ -53,8 +53,7 @@ function ServicesCarousel() {
                 responsive={responsive}
                 items={items}
               />
-        </div>
-        )}        
+        </div>  
         
         <div className='container s-carousel-wrapper flex items-start'>
           <Link to='/engagements'><button className='border-2 border-indigo-800 hover:bg-indigo-800 hover:text-white py-3 px-10 rounded-full '>More</button></Link>

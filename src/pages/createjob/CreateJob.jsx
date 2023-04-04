@@ -19,6 +19,9 @@ function CreateJob() {
 
     const inputValidation = document.getElementById('create-cost')
 
+    const userId = JSON.parse(localStorage.getItem('currentUser'))._id;
+    console.log(userId)
+
     const handleAddSkill = (e) => {
         setSkills((prev) => [...prev, skill])
         setSkill('')
@@ -31,8 +34,10 @@ function CreateJob() {
         try {
             if(title !=='' && budget !=='' && location !=='' && description !=='' && phone !==''){
             const res = await axios.post('https://serviceapi.onrender.com/api/jobs/', {
-            skills, title, budget, isNegotiable, location, freelance, description, phone
-                },{withCredentials:true}); 
+            userId, skills, title, budget, isNegotiable, location, freelance, description, phone
+                }); 
+
+                console.log(res)
                 } else {
                     alert('Please fill all the fields')
             }

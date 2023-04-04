@@ -9,6 +9,7 @@ function Reviews({serviceId}) {
      const queryClient = useQueryClient() 
 
       const user = JSON.parse(localStorage.getItem('currentUser'))
+      const userId = JSON.parse(localStorage.getItem('currentUser'))._id;
      
      const { isLoading, error, data, refetch } = useQuery({
         queryKey: ['reviews'],
@@ -20,7 +21,7 @@ function Reviews({serviceId}) {
 
   const mutation = useMutation({
     mutationFn: (review) => {
-      return axios.post('https://serviceapi.onrender.com/api/reviews',review, {withCredentials:true})
+      return axios.post('https://serviceapi.onrender.com/api/reviews',review)
     },
     onSuccess:() => {
       queryClient.invalidateQueries(["reviews"])
@@ -34,7 +35,7 @@ function Reviews({serviceId}) {
    //const res = await axios.post('http://localhost:8800/api/reviews/', {serviceId, description},
    //{withCredentials:true});
     //console.log(res);
-    mutation.mutate({serviceId, description})
+    mutation.mutate({serviceId, description, userId})
     setDescription('')
   }
 
@@ -54,7 +55,7 @@ function Reviews({serviceId}) {
           </div>    
            
                <div className='w-full'>
-               {isLoading ? "Loading" : error ? "Something went wrong" : data.map((review) => <Review key={review._id} review={review}/>)}             
+               {data?.map((review) => <Review key={review._id} review={review}/>)}             
 
                </div>
                 

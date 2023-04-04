@@ -19,7 +19,7 @@ function Navbar() {
 
     const logoutUser = () => {
         try {
-            axios.post('https://serviceapi.onrender.com/api/auth/logout', {withCredentials:true});
+            axios.post('https://serviceapi.onrender.com/api/auth/logout');
             localStorage.setItem("currentUser", null)
             window.location.replace('/')
         } catch (err) {
@@ -35,7 +35,7 @@ function Navbar() {
             </div>
             <div className='right-nav flex items-center justify-end'>
                <Link to='/engagements' ><p className='mr-6 text-lg font-medium text-amber-500 cursor-pointer ' >Find a skill</p></Link>
-                <p className='mr-6 text-lg font-medium text-amber-500 cursor-pointer ' >Get a paying task</p>
+                <Link to='/jobs' ><p className='mr-6 text-lg font-medium text-amber-500 cursor-pointer ' >Get a paying task</p></Link>
                 {user  !==null ? (
                     <>
                         <button onClick={() => logoutUser()} className='mr-6 border-amber-500 rounded-full py-2 px-8 border-2 text-lg font-medium'>Logout</button>
@@ -86,7 +86,8 @@ function Navbar() {
                     <Link to='/'><p  onClick={() => setOpen(false)} className='mb-2 text-lg font-medium text-zinc-500 cursor-pointer' >Home</p></Link>
                     <Link to='/engagements'><p onClick={() => setOpen(false)}  className='mb-2 text-lg font-medium text-zinc-500 cursor-pointer' >Find a skill</p></Link>
                     <Link to='/jobs'><p onClick={() => setOpen(false)}  className='mb-2 text-lg font-medium text-zinc-500 cursor-pointer' >Find a paying task</p></Link>
-                    <Link to='/create'><p onClick={() => setOpen(false)}  className='mb-2 text-lg font-medium text-zinc-500 cursor-pointer' >Create a post</p></Link>
+                    {user !== null && <Link to='/create'><p onClick={() => setOpen(false)}  className='mb-2 text-lg font-medium text-zinc-500 cursor-pointer' >Create a post</p></Link>}
+                    
                  </div>
                  {user &&  <button onClick={() => logoutUser()} className='bg-amber-500 w-full py-3 px-3 rounded-full mt-6 text-white'>Logout</button>}
             </div>

@@ -34,6 +34,6 @@
 
 @media screen and (max-width:850px) {
     .engagementcard {
-        width: 100%;
+        width: 330px !important;
     }
 }

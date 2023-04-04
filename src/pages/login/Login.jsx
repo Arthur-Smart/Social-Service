@@ -14,12 +14,12 @@ function Login() {
     const handleLogin = async () =>{
         const loginData = {name, password}
         try {
-            const res = await axios.post('https://serviceapi.onrender.com/api/auth/login', loginData ,{withCredentials:true});
+            const res = await axios.post('http://localhost:8800/api/auth/login', loginData);
             localStorage.setItem("currentUser", JSON.stringify(res.data));
             navigate('/')
         } catch (err) {
-            setError(err.response.data)
-            console.log(err.response.data)
+            setError(err.response?.data)
+            //console.log(err.response.data)
         }
     }
   return (

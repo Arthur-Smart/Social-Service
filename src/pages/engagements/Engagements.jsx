@@ -15,7 +15,7 @@ function Engagements() {
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ['services'],
     queryFn: () =>
-      axios(`https://talented-pink-buckle.cyclic.app/api/service${search}`).then((res) => {
+      axios(`https://serviceapi.onrender.com/api/service${search}`).then((res) => {
         return res.data;
       })
   })
@@ -33,8 +33,6 @@ function Engagements() {
   refetch();
   },[title])
 
- 
-  console.log(data)
   return (
     <div className='engagements flex flex-col items-center justify-center'>
         <div className='container length-wrapper mt-7'>
@@ -49,8 +47,7 @@ function Engagements() {
         
         <div className='container e-main-wrapper mt-3 flex flex-wrap  items-center justify-center gap-4'>
             {
-              isLoading ? "loading" : error ? "Something went wrong" : 
-              data.map((service) => <EngagementCard key={service._id} item={service}/>)
+              data?.map((service) => <EngagementCard key={service?._id} item={service}/>)
             }
 
             

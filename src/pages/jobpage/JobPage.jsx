@@ -28,7 +28,7 @@ function JobPage() {
       })
   })
 
-  const filterData = dataAll?.filter((d) => d._id !==data._id && d.userId === data.userId);
+  const filterData = dataAll?.filter((d) => d?._id !==data?._id && d?.userId === data.userId);
   
 
   //console.log(dataAll)
@@ -52,7 +52,7 @@ function JobPage() {
                             <img className='j-p-image' src={dataUser?.userImage} alt='skill hub'/>
                             <p className='ml-2 text-zinc-600 font-semibold'>{dataUser?.name}</p>
                         </div>
-                        <Link to='/message/7'><p className='text-green-400 text-2xl cursor-pointer' title='Chat with me'><i class="fa-brands fa-square-whatsapp"></i></p></Link>
+                        <p className='text-green-400 text-2xl cursor-pointer' title='Chat with me'><i class="fa-brands fa-square-whatsapp"></i></p>
                     </div>
                         <p className='text-amber-500 text-lg font-medium mt-4'>{data?.title}</p>
                         <p className='text-zinc-500 font-semibold'>Published {moment(data?.createdAt).fromNow()}</p>

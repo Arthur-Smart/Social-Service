@@ -1,13 +1,15 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './useraccountservices.css'
 import axios from "axios"
 
 function UserAccountService({item, setAuthError}) {
+  
   const handleDelete = async () => {
-    try {
-      await axios.delete(`https://serviceapi.onrender.com/api/service/delete/${item?._id}`, {withCredentials:true})
+   try {
+    await axios.delete(`https://serviceapi.onrender.com/api/service/delete/${item?._id}`)
+    window.location.reload()
     } catch (err) {
-      setAuthError(err.response.data)
+      setAuthError(err.response?.data)
     }
     
   }

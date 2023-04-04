@@ -8,7 +8,7 @@ function UserAccountJobs({job}) {
   const queryClient = useQueryClient() 
 
    const handleDelete = async () => {
-    await axios.delete(`https://serviceapi.onrender.com/api/jobs/single/${job?._id}`, {withCredentials:true})
+    await axios.delete(`https://serviceapi.onrender.com/api/jobs/single/${job?._id}`)
   }
   return (
     <div className='user-account-jobs flex flex-col border-zinc-200'>

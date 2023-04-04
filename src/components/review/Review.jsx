@@ -15,7 +15,7 @@ function Review({review}) {
   });
 
   const handleDelete = async () =>{
-    await axios.delete(`https://serviceapi.onrender.com/api/reviews/${review?.userId}`, {withCredentials:true})
+    await axios.delete(`https://serviceapi.onrender.com/api/reviews/${review?.userId}`)
   }
 
   return (

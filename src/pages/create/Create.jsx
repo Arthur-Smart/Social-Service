@@ -21,12 +21,16 @@ function Create() {
         setIsNegotiable(e.target.checked)
     }
 
+    const userId = JSON.parse(localStorage.getItem('currentUser'))._id;
+    console.log(userId)
+    
+
     const handleCreate = async() => {
         if(inputValidation < 0){
             alert("There price cannot be a negative value. Enter a positive number")
         }
         const serviceData = {
-            title, price, category, location, description, shortDescription, isNegotiable, phone
+           userId, title, price, category, location, description, shortDescription, isNegotiable, phone
         };
 
         if(image){
@@ -57,7 +61,7 @@ function Create() {
           setPhone('')
           setImage(null)
      } catch (err) {
-        setAuthError(err.response.data)
+        setAuthError(err.response?.data)
      }  
        } else{
              alert('Please fill all fields')
