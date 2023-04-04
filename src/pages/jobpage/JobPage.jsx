@@ -28,7 +28,7 @@ function JobPage() {
       })
   })
 
-  const filterData = dataAll?.filter((d) => d?._id !==data?._id && d?.userId === data.userId);
+  const filterData = dataAll?.filter((d) => d?._id !==data?._id && d?.userId === data?.userId);
   
 
   //console.log(dataAll)
@@ -84,7 +84,7 @@ function JobPage() {
             <div className='container s-u-main-wrapper'>
                 <p className='text-white  text-lg similar-title mt-4'>Other job posting by {dataUser?.name} | <span className='text-amber-500 font-bold'>{filterData?.length} other jobs</span></p>
                 <div className='other-jobs-wrapper flex flex-wrap items-center gap-2 justify-center'>
-                    {filterData?.map((f) => <OtherJobs key={f._id} item={f}/>)}
+                    {filterData?.map((f) => <OtherJobs key={f?._id} item={f}/>)}
                 </div>
             </div>
         </div>

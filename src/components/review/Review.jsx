@@ -25,7 +25,7 @@ function Review({review}) {
         <div>
           <p className='font-bold text-zinc-700'>{data?.name}</p>
           <p className='text-zinc-600'>{review?.description}</p>
-          <p className='text-zinc-600'>{moment(review?.createdAt).fromNow()}</p>
+          <p className='text-zinc-800'>{moment(review?.createdAt).fromNow()}</p>
         </div>  
           {user?._id === review?.userId && (<p onClick={() => handleDelete()} className='ml-5 cursor-pointer'><i class="fa-solid fa-trash"></i></p>)}     
             
