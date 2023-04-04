@@ -44,7 +44,7 @@ console.log(select)
         
         <div className='container selection-wrapper flex flex-wrap items-center justify-center gap-2 pt-5'>
            
-           {select ? (data.length === 0 ? <p>You have no services created</p> : (data?.map(item => <UserAccountService setAuthError={setAuthError} item={item}/>))) : (dataJob.length === 0 ? <p>You have no job posts. Post something</p> : (dataJob?.map(job => <UserAccountJobs job={job} reftchJob={reftchJob}/>)))}
+           {select ? (data?.length === 0 ? <p>You have no services created</p> : (data?.map(item => <UserAccountService setAuthError={setAuthError} item={item}/>))) : (dataJob?.length === 0 ? <p>You have no job posts. Post something</p> : (dataJob?.map(job => <UserAccountJobs job={job} reftchJob={reftchJob}/>)))}
             {/*select ? 'services' (data?.map(item => <UserAccountService item={item}/>)) : select ? 'jobs' (dataJob?.map(job => <UserAccountJobs job={job} reftchJob={reftchJob}/>)) : 'yolo'}
            {{data?.map(item => <UserAccountService item={item}/>)}}
             {dataJob?.map(job => <UserAccountJobs job={job} reftchJob={reftchJob}/>)*/}
