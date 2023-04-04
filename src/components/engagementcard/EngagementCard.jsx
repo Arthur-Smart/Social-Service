@@ -1,17 +1,26 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import axios from "axios"
 import './engagementcard.css'
 
 function EngagementCard({item}) {
- const { isLoading, error, data, refetch } = useQuery({
-    queryKey: ['serviceOwner'],
-    queryFn: () =>
-      axios(`https://serviceapi.onrender.com/api/user/${item?.userId}`).then((res) => {
-        return res.data;
-      })
-  });
+    const [data, setData] = useState({})
+
+    useEffect(() => {
+    const getUser = async ()=> {
+      const res = await axios(`https://serviceapi.onrender.com/api/user/${item?.userId}`);
+      setData(res.data)
+    }
+    getUser()
+  },[item?.userId])
+ //const { isLoading, error, data, refetch } = useQuery({
+ //   queryKey: ['serviceOwner'],
+ //   queryFn: () =>
+ //     axios(`https://serviceapi.onrender.com/api/user/${item?.userId}`).then((res) => {
+ //       return res.data;
+ //     })
+ // });
 
 
    const { isLoading:isLoadingReview, error:errorReview, data:dataReview} = useQuery({
