@@ -37,7 +37,11 @@ function CreateJob() {
             userId, skills, title, budget, isNegotiable, location, freelance, description, phone
                 }); 
 
-                console.log(res)
+                setTitle('')
+                setBudget('')
+                setLocation('')
+                setDescription('')
+                setPhone('')
                 } else {
                     alert('Please fill all the fields')
             }
@@ -67,15 +71,15 @@ function CreateJob() {
         </div>
         <div className='container bg-gray-100 py-2'>
             <div className='c-job-title-budget flex items-center justify-between px-3 pb-2'>
-                 <input className='py-2 px-2  outline-1  outline-amber-100 text-zinc-500' type='text' onChange={(e) => setTitle(e.target.value)} placeholder='Type title'/>
-                <input  className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500' id='create-cost' type='number' min='0' onChange={(e) => setBudget(e.target.value)} placeholder='Enter bugeted amount'/>
+                 <input className='py-2 px-2  outline-1  outline-amber-100 text-zinc-500' type='text' value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Type title'/>
+                <input  className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500' id='create-cost' type='number' value={budget} min='0' onChange={(e) => setBudget(e.target.value)} placeholder='Enter bugeted amount'/>
             </div>
             <div className='location-phone flex items-center gap-6 px-3 pb-2'>
-                 <input className='py-2 px-2  outline-1  outline-amber-100 text-zinc-500' type='text' onChange={(e) => setLocation(e.target.value)} placeholder='Type Location'/>
-                 <input className='py-2 px-2  outline-1  outline-amber-100 text-zinc-500' type='text' onChange={(e) => setPhone(e.target.value)} placeholder='Enter Whatsapp Number'/>
+                 <input className='py-2 px-2  outline-1  outline-amber-100 text-zinc-500' type='text' value={location} onChange={(e) => setLocation(e.target.value)} placeholder='Type Location'/>
+                 <input className='py-2 px-2  outline-1  outline-amber-100 text-zinc-500' type='text' value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='Enter Whatsapp Number'/>
             </div>
             <div className='c-job-description px-3 pb-2'>
-                <textarea className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500' onChange={(e) => setDescription(e.target.value)} placeholder='Job description'></textarea>
+                <textarea className='py-2 px-2  outline-1 outline-amber-100 text-zinc-500' value={description} onChange={(e) => setDescription(e.target.value)} placeholder='Job description'></textarea>
             </div>
             <div className='add-skill px-3'>
                 <p>Specify mandatory skill requirements</p>
@@ -116,9 +120,9 @@ function CreateJob() {
         <div className='container bottom-c-j-items py-2'>
             <button onClick={() => handleCreate()} className='bg-indigo-800 py-2 px-4 rounded-full text-white hover:bg-indigo-700'>Publish</button>
         </div>
-        <div className='container bottom-c-j-items'>
+        {/*<div className='container bottom-c-j-items'>
             <p className='text-amber-500'>{authError}. Please Login again to continue</p>
-        </div>
+        </div>*/}
         </div>
     </div>
   )
