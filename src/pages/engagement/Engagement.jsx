@@ -16,7 +16,7 @@ function Engagement() {
   
  
 
-  const { isLoading, error, data, refetch } = useQuery({
+  const { isLoading, error, data } = useQuery({
     queryKey: ['service'],
     queryFn: () =>
       axios(`https://serviceapi.onrender.com/api/service/single/${id}`).then((res) => {
@@ -55,7 +55,7 @@ function Engagement() {
                   <p className='font-bold text-xl text-zinc-500'>{data?.title}</p>
                   <div className='flex items-center mt-2 border-2 p-2'>
                     {dataUser?.userImage ? <img className='engagement-p-pic' src={dataUser?.userImage} alt='SkillsHub' /> : <img  className='engagement-p-pic' src={require('../../assets/avatar.jpg')} alt='Skills hub'/>}
-                    <p className='font-bold text-black ml-2 font-bold text-lg'>{dataUser?.names}</p>
+                    <p className='font-bold text-black ml-2 font-bold text-lg'>{dataUser?.name}</p>
                     <Link to={`/engagements?userId=${data?.userId}`}><button className='py-1 px-2 bg-red-500 ml-2 rounded-md text-white'>All my <span className='font-bold'>engagements</span></button></Link>
                   </div>
                   <img className='engagement-s-img mt-5' src={data?.image} alt='skills hub'/>
