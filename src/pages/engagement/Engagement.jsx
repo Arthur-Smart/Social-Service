@@ -9,7 +9,7 @@ import {Link} from 'react-router-dom'
 
 function Engagement() {
   const [show, setShow] = useState(false)
-  const [dataUser, setDataUser] = useState({})
+  //const [dataUser, setDataUser] = useState({})
  
   const {id} = useParams();
   const user = JSON.parse(localStorage.getItem('currentUser'))
@@ -24,21 +24,21 @@ function Engagement() {
       })
   })
 
-  useEffect(() => {
-  const getData = async ()=> {
-    const res = await  axios(`https://serviceapi.onrender.com/api/user/${data?.userId}`)
-    setDataUser(res.data)
-  }
-  getData()
- },[data?.userId])
+  //useEffect(() => {
+  //const getData = async ()=> {
+  //  const res = await  axios(`https://serviceapi.onrender.com/api/user/${data?.userId}`)
+  //  setDataUser(res.data)
+  //}
+  //getData()
+ //},[data?.userId])
 
-  //const { isLoading:isLoadingUser, error:errorUser, data:dataUser} = useQuery({
-  //  queryKey: ['user'],
-  //  queryFn: () =>
-  //    axios(`https://serviceapi.onrender.com/api/user/${data?.userId}`).then((res) => {
-  //      return res.data;
-  //    })
-  //})
+  const { isLoading:isLoadingUser, error:errorUser, data:dataUser} = useQuery({
+    queryKey: ['user'],
+    queryFn: () =>
+      axios(`https://serviceapi.onrender.com/api/user/${data?.userId}`).then((res) => {
+        return res.data;
+      })
+  })
 
   const ownerEmail = dataUser?.email
   const handleEmail = () => {

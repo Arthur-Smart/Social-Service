@@ -9,7 +9,7 @@ function Reviews({serviceId}) {
      const queryClient = useQueryClient() 
 
       const user = JSON.parse(localStorage.getItem('currentUser'))
-      const userId = JSON.parse(localStorage.getItem('currentUser'))._id;
+      const userId = JSON.parse(localStorage.getItem('currentUser'))?._id;
      
      const { isLoading, error, data, refetch } = useQuery({
         queryKey: ['reviews'],
@@ -55,7 +55,7 @@ function Reviews({serviceId}) {
           </div>    
            
                <div className='w-full'>
-               {data?.map((review) => <Review key={review._id} review={review}/>)}             
+               {data?.map((review) => <Review key={review?._id} review={review}/>)}             
 
                </div>
                 
