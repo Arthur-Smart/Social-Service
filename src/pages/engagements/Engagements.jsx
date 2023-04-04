@@ -8,17 +8,26 @@ import './engagements.css'
 
 function Engagements() {
 
+  const [data, setData] = useState([])
   const {search} = useLocation()
   const [title, setTitle] = useState('')
   const navigate = useNavigate()
 
-  const { isLoading, error, data, refetch } = useQuery({
-    queryKey: ['services'],
-    queryFn: () =>
-      axios(`https://serviceapi.onrender.com/api/service${search}`).then((res) => {
-        return res.data;
-      })
-  })
+  useEffect(() => {
+    const getService = async ()=> {
+      const res = await axios(`https://serviceapi.onrender.com/api/service${search}`);
+      setData(res.data)
+    }
+    getService()
+  },[search])
+
+  //const { isLoading, error, data, refetch } = useQuery({
+  //  queryKey: ['services'],
+  //  queryFn: () =>
+  //    axios(`https://serviceapi.onrender.com/api/service${search}`).then((res) => {
+  //      return res.data;
+  //    })
+  //})
 
   const handleSearch = () =>{
     if(title !== '' ){
@@ -29,9 +38,9 @@ function Engagements() {
     }
   }
 
-  useEffect(() => {
-  refetch();
-  },[title])
+  //useEffect(() => {
+  //refetch();
+  //},[title])
 
   return (
     <div className='engagements flex flex-col items-center justify-center'>
