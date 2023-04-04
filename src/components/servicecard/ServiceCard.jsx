@@ -17,13 +17,16 @@ function ServiceCard({item}) {
     <Link to={`/engagement/${item?._id}`}>
           <div className='service-card border-gray-200 s-card-border cursor-pointer'>
           <img className='service-img' src={item?.image} alt='skills hub'/>
-          <div className='name-profile flex items-center p-2'>
+          {isLoading ? 'Loading...' : error ? 'Something went wrong' :(
+             <div className='name-profile flex items-center p-2'>
               {data?.userImage ? <img className='service-owner-pic' src={data?.userImage} alt='skills hub'/> : <img className='service-owner-pic' src={require('../../assets/avatar.jpg')} alt='Skills hub'/>}
               <p className='ml-2 text-zinc-500'>{data?.name}</p>
           </div>
+          )}
+         
           <div className='name-profile px-2'>
               <p className='ml-2 text-zinc-800 text-xl font-bold'>{item?.title}</p>
-              <p className='ml-2 text-zinc-500'>{item?.description.substring(0,80)}...</p>
+              <p className='ml-2 text-zinc-500'>{item?.shortDescription.substring(0,80)}...</p>
           </div>
           <div className='price-tab bg-amber-500'>
               <p className='text-white'>Kes {item?.price}</p>

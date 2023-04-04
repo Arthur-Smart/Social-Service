@@ -21,8 +21,8 @@ function Create() {
         setIsNegotiable(e.target.checked)
     }
 
-    const userId = JSON.parse(localStorage.getItem('currentUser'))._id;
-    console.log(userId)
+    const userId = JSON.parse(localStorage.getItem('currentUser'))?._id;
+    
     
 
     const handleCreate = async() => {
