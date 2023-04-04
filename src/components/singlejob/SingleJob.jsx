@@ -15,10 +15,10 @@ function SingleJob({job}) {
   return (
     <div className='singlejob border-gray-200 single-j-border p-2'>
         <div className='flex flex-col job-wrapper'>
-            <div className='flex'>
+            {/*<div className='flex'>
                 {data?.userImage ? <img src={data?.userImage} alt = "Skillshub"/> : <img  src={require('../../assets/avatar.jpg')} alt='Skills hub'/>}
             <p className='ml-2 text-xl font-medium'>{data?.name}</p>
-            </div>            
+            </div>*/}            
             <div className='mt-4'>
                 <p className='text-lg font-semibold'>{job?.title}</p>
                 <p className='text-zinc-900'>{job?.description.substring(0,150)}...</p>
