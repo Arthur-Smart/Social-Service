@@ -20,7 +20,7 @@ function ServicesCarousel() {
 
   useEffect(() => {
     const getService = async ()=> {
-      const res = axios('https://serviceapi.onrender.com/api/service');
+      const res = await axios('https://serviceapi.onrender.com/api/service');
       setData(res.data)
     }
     getService()
