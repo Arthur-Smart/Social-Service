@@ -47,9 +47,7 @@ function CreateJob() {
                 setPhone('')
 
                  //Show publish notification
-                setTimeout(() => {
                     setPublished(true)
-                }, 3000)
                 } else {
                     alert('Please fill all the fields')
             }
@@ -67,8 +65,6 @@ function CreateJob() {
     }
 
     
-
-    console.log(freelance)
 
       return (
        <div className='create-job flex flex-col items-center justify-center '>

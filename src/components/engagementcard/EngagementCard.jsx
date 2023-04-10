@@ -37,7 +37,7 @@ function EngagementCard({item}) {
    <div className='engagementcard border-2'>
         <img className='engagement-c-img' src={item?.image} alt='Skills hub'/>
         <div className='profile-info flex items-center p-2'>
-            <img className='engagement-p-img cursor-pointer' src={data?.userImage} alt='Skills hub'/>
+            {data?.userImage ? <img className='engagement-p-img cursor-pointer' src={data?.userImage} alt='Skills hub'/> : <img className='engagement-p-img cursor-pointer' src={require('../../assets/avatar.jpg')} alt='Skills hub'/>}
             <div className='ml-2 '>
                 <p className='text-zinc-500 font-medium'>{data?.name}</p>
                 <p className='text-amber-500 font-bold text-lg -mt-2 cursor-pointer'>{item?.title.substring(0,21)}...</p>

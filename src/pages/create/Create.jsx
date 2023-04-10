@@ -65,9 +65,7 @@ function Create() {
           setImage(null)
 
           //Show publish notification
-          setTimeout(() => {
-            setPublished(true)
-          }, 3000)
+         setPublished(true)
      } catch (err) {
         setAuthError(err.response?.data)
      }  
