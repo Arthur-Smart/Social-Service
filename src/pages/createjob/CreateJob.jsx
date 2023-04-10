@@ -17,6 +17,9 @@ function CreateJob() {
     const [phone, setPhone] = useState('')
     const [authError, setAuthError] = useState(null)
 
+    //Published State
+    const [published, setPublished] = useState(false)
+
     const inputValidation = document.getElementById('create-cost')
 
     const userId = JSON.parse(localStorage.getItem('currentUser'))._id;
@@ -42,6 +45,11 @@ function CreateJob() {
                 setLocation('')
                 setDescription('')
                 setPhone('')
+
+                 //Show publish notification
+                setTimeout(() => {
+                    setPublished(true)
+                }, 3000)
                 } else {
                     alert('Please fill all the fields')
             }
@@ -65,6 +73,9 @@ function CreateJob() {
       return (
        <div className='create-job flex flex-col items-center justify-center '>
        <div className='container create-job-m-wrapper'>
+            {published && <div className='container w-full bg-black p-2 mt-1'>
+                <p className='text-white text-center '>Job Published Successfully 🎉</p> 
+            </div>}
         <div className='container post-link-wrapper mt-10 mb-3 flex items-center'>
             <p className='font-medium text-xl text-zinc-500 post-s-link '> Post job</p>
             <Link to='/create'><p className='font-medium text-xl post-j-link  ml-4 text-indigo-600 cursor-pointer underline'>Post a new skill engagement <i class="fa-solid fa-chevron-right"></i></p></Link>

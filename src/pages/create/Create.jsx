@@ -15,6 +15,9 @@ function Create() {
     const [isNegotiable, setIsNegotiable] = useState(false)
     const [authError, setAuthError] = useState(null)
 
+    //Published State
+    const [published, setPublished] = useState(false)
+
     const inputValidation = document.getElementById('create-cost')
 
     const handleCheckboxChange = (e) => {
@@ -50,7 +53,7 @@ function Create() {
        if( title !=='' && price !=='' && category !== '' && location !== '' && description !== ''  && shortDescription !== '' && phone !== '' && image !== null){
             try {
           const res = await axios.post('https://serviceapi.onrender.com/api/service/', serviceData)
-          console.log(res)
+          //Clear inputs
           setTitle('')
           setCategory('')
           setDescription('')
@@ -60,6 +63,11 @@ function Create() {
           setShortDescription('')
           setPhone('')
           setImage(null)
+
+          //Show publish notification
+          setTimeout(() => {
+            setPublished(true)
+          }, 3000)
      } catch (err) {
         setAuthError(err.response?.data)
      }  
@@ -77,6 +85,9 @@ function Create() {
   return (
     <div className='create flex flex-col items-center justify-center'>
     <div className='container create-m-wrapper flex flex-col items-center justify-center'>
+        {published && <div className='container w-full bg-black p-2 mt-1'>
+            <p className='text-white text-center'>Service Published Successfully 🥳</p> 
+           </div>}
         <div className='container post-link-wrapper  mt-10 mb-3 flex items-center'>
             <p className='font-medium post-s-link text-xl text-zinc-500'>Post a new skill engagement</p>
             <Link to='/create-job'><p className='font-medium text-xl post-j-link ml-4 text-indigo-600 cursor-pointer underline'><i class="fa-solid fa-chevron-left"></i> Post job instead</p></Link>
