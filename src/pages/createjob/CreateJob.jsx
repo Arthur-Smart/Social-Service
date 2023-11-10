@@ -47,7 +47,8 @@ function CreateJob() {
                 setPhone('')
 
                  //Show publish notification
-                    setPublished(true)
+                 
+                setPublished(true)
                 } else {
                     alert('Please fill all the fields')
             }
