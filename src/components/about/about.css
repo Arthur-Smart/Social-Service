@@ -1,10 +1,21 @@
 .about{
     width:100%;
-    background-color: #3e4396;
+    /* background-color: #3e4396; */
 }
 
-.about-left{
-    width:40%;
+.info-wrapper{
+background-color: #3e4396;
+}
+
+.about-cards__wrapper{
+    width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        grid-gap: 7px;
+}
+
+.about-card{
+    background-color: #9b51e0;
 }
 
 .about-right {
@@ -37,7 +48,7 @@
 }
 
 @media screen and (max-width:1045px) {
-    .about-wrapper {
+    .info-wrapper {
         width: 90%;
     }
 }

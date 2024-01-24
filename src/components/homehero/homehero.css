@@ -16,7 +16,7 @@
     background-image: url('../../assets/mainbg.jpg');
     background-size: cover;
     background-position: center;
-    animation: 7s animate infinite alternate linear;
+    /* animation: 7s animate infinite alternate linear; */
     z-index:-1;
 }
 

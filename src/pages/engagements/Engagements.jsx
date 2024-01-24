@@ -34,7 +34,7 @@ function Engagements() {
   return (
     <div className="engagements flex flex-col items-center justify-center">
       <div className="container length-wrapper mt-7">
-        <p className="font-bold text-xl text-zinc-500">
+        <p className="font-bold text-lg text-zinc-500">
           {data?.length} services available
         </p>
       </div>

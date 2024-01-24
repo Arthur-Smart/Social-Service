@@ -4,19 +4,11 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import AliceCarousel from "react-alice-carousel";
 import "./servicecarousel.css";
 import ServiceCard from "../servicecard/ServiceCard";
-import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 function ServicesCarousel() {
   const [data, setData] = useState([]);
-  //const { isLoading, error, data, refetch } = useQuery({
-  //      queryKey: ['randomservice'],
-  //      queryFn: () =>
-  //      axios('https://serviceapi.onrender.com/api/service').then((res) => {
-  //          return res.data;
-  //    })
-  //});
 
   useEffect(() => {
     const getService = async () => {

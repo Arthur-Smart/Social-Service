@@ -6,13 +6,6 @@ import axios from "axios";
 
 function ServiceCard({ item }) {
   const [data, setData] = useState({});
-  //const { isLoading, error, data, refetch } = useQuery({
-  //      queryKey: ['userJobOwner'],
-  //      queryFn: () =>
-  //      axios(`https://serviceapi.onrender.com/api/user/${item?.userId}`).then((res) => {
-  //          return res.data;
-  //    })
-  //});
 
   useEffect(() => {
     const getService = async () => {
@@ -51,7 +44,16 @@ function ServiceCard({ item }) {
         </div>
 
         <div className="name-profile px-2">
-          <p className="ml-2 text-zinc-800 text-xl font-bold">{item?.title}</p>
+          {item?.title.length > 40 ? (
+            <p className="ml-2 text-zinc-800 text-lg font-bold">
+              {item?.title.substring(0, 40)}...
+            </p>
+          ) : (
+            <p className="ml-2 text-zinc-800 text-lg font-bold">
+              {item?.title}
+            </p>
+          )}
+
           <p className="ml-2 text-zinc-500">
             {item?.shortDescription.substring(0, 80)}...
           </p>

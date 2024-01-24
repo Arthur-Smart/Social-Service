@@ -51,7 +51,7 @@ function Navbar() {
             <>
               <button
                 onClick={() => logoutUser()}
-                className="mr-6 border-amber-500 rounded-full py-2 px-8 border-2 text-lg font-medium"
+                className="mr-6 border-amber-500 rounded-full py-2 px-8 border-[1px] text-lg font-medium"
               >
                 Logout
               </button>
@@ -204,7 +204,7 @@ function Navbar() {
           {user && (
             <button
               onClick={() => logoutUser()}
-              className="bg-amber-500 w-full py-3 px-3 rounded-full mt-6 text-white"
+              className="bg-amber-500 border-[1px] w-full py-3 px-3 rounded-full mt-6 text-white"
             >
               Logout
             </button>
