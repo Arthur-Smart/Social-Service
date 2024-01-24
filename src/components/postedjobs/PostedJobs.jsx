@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import SingleJob from "../singlejob/SingleJob";
 import { Link } from "react-router-dom";
+import Loader from "../../assets/loader.json";
+import Lottie from "lottie-react";
 import "./postedjobs.css";
 
 function PostedJobs() {
@@ -15,14 +16,6 @@ function PostedJobs() {
     };
     getData();
   }, []);
-
-  //const { isLoading, error, data, refetch } = useQuery({
-  //      queryKey: ['postedJobs'],
-  //      queryFn: () =>
-  //      axios(`https://serviceapi.onrender.com/api/jobs/`).then((res) => {
-  //          return res.data;
-  //    })
-  //});
 
   const randomData = data?.sort(() => Math.random() - 0.5).slice(0, 6);
 
@@ -42,6 +35,19 @@ function PostedJobs() {
             job={job}
           />
         ))}
+        {randomData && randomData.length === 0 && (
+          <div className="container flex flex-col items-center justify-center py-2">
+            <p className="-mb-[120px] font-semibold text-zinc-500">
+              Please hold on a moment ...
+            </p>
+            <div style={{ width: "20%" }}>
+              <Lottie
+                loop={true}
+                animationData={Loader}
+              />
+            </div>
+          </div>
+        )}
       </div>
       <div className="container p-b-wrapper items-start">
         <Link to="/jobs">
