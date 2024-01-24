@@ -17,13 +17,6 @@ function SingleJob({ job }) {
     getService();
   }, [job?.userId]);
 
-  //  const { isLoading, error, data, refetch } = useQuery({
-  //      queryKey: ['userJobOwner'],
-  //     queryFn: () =>
-  //      axios(`https://serviceapi.onrender.com/api/user/${job?.userId}`).then((res) => {
-  //          return res.data;
-  //    })
-  //});
   return (
     <div className="singlejob border-gray-200 single-j-border p-2 rounded-md">
       <div className="flex flex-col job-wrapper">
@@ -43,7 +36,7 @@ function SingleJob({ job }) {
         </div>
         <div className="mt-4">
           <p className="text-[16px] font-semibold">{job?.title}</p>
-          <p className="text-zinc-900">
+          <p className="text-zinc-900 text-[15px]">
             {job?.description.substring(0, 150)}...
           </p>
         </div>

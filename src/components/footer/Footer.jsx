@@ -61,7 +61,7 @@ function Footer() {
             target="_blank"
           >
             {" "}
-            <p className="text-zinc-400 text-2xl ml-3">
+            <p className="text-zinc-400 text-2xl ml-2">
               <i class="fa-brands fa-square-instagram"></i>
             </p>
           </a>
@@ -69,11 +69,11 @@ function Footer() {
             href="https://www.linkedin.com/in/arthur-mwangi-7a80761bb/"
             target="_blank"
           >
-            <p className="text-zinc-400 text-2xl ml-3">
+            <p className="text-zinc-400 text-2xl ml-2">
               <i class="fa-brands fa-linkedin"></i>
             </p>
           </a>
-          <p className="text-zinc-400 text-2xl ml-3">
+          <p className="text-zinc-400 text-2xl ml-2">
             <i class="fa-brands fa-square-whatsapp"></i>
           </p>
         </div>
