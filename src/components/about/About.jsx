@@ -13,7 +13,7 @@ function About() {
         </p>
         <div className="about-cards__wrapper mt-4">
           <div className="about-card px-4 py-7  rounded-md">
-            <h2 className="text-white text-lg font-semibold">
+            <h2 className="text-white text-[16px] md:text-lg font-semibold">
               Simplifies Job Search <i class="fa-solid fa-magnifying-glass"></i>
             </h2>
             <p className="text-white text-[15px] mt-3">
@@ -23,7 +23,7 @@ function About() {
             </p>
           </div>
           <div className="about-card px-4 py-7  rounded-md">
-            <h2 className="text-white text-lg font-semibold">
+            <h2 className="text-white text-[16px] md:text-lg font-semibold">
               Location-Based Services <i class="fa-solid fa-flag"></i>
             </h2>
             <p className="text-white text-[15px] mt-3">
@@ -33,7 +33,7 @@ function About() {
             </p>
           </div>
           <div className="about-card px-4 py-7 rounded-md">
-            <h2 className="text-white text-lg font-semibold">
+            <h2 className="text-white text-[16px] md:text-lg font-semibold">
               Provides a Trustworthy Platform <i class="fa-solid fa-lock"></i>
             </h2>
             <p className="text-white text-[15px] mt-3">
@@ -43,7 +43,7 @@ function About() {
             </p>
           </div>
           <div className="about-card px-4 py-7  rounded-md">
-            <h2 className="text-white text-lg font-semibold">
+            <h2 className="text-white text-[16px] md:text-lg font-semibold">
               Enhanced Communication <i class="fa-solid fa-message"></i>
             </h2>
             <p className="text-white text-[15px] mt-3">

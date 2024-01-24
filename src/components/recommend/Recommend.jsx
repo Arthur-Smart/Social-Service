@@ -6,7 +6,7 @@ function Recommend() {
   return (
     <div className="recommend flex  items-center justify-center">
       <div className="container recommend-wrapper flex-col flex items-center justify-center">
-        <p className="text-white text-xl md:text-2xl text-center">
+        <p className="text-white text-lg md:text-2xl text-center">
           <span className="recommend-title text-amber-500 font-bold text-6xl">
             SkillHub
           </span>

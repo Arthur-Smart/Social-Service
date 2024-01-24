@@ -40,7 +40,7 @@ function Footer() {
           </button>
         </div>
       </div>
-      <div className="container footer-b-wrapper flex items-center justify-between">
+      <div className="container footer-b-wrapper flex items-center justify-between mt-3">
         <div className="footer-left flex items-center">
           <p className="text-zinc-400 text-3xl font-bold">SkillsHub</p>
           <p className="ml-3 text-zinc-400">
@@ -73,12 +73,8 @@ function Footer() {
               <i class="fa-brands fa-linkedin"></i>
             </p>
           </a>
-          <p className="text-zinc-400 text-xl ml-3">
+          <p className="text-zinc-400 text-2xl ml-3">
             <i class="fa-brands fa-square-whatsapp"></i>
-          </p>
-
-          <p className="ml-10 text-zinc-500 text-xl">
-            <i className="fa-solid fa-globe ml-2"></i> Kenya
           </p>
         </div>
       </div>

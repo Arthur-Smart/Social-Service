@@ -9,6 +9,7 @@ function SkillCard({ item }) {
         <img
           src={item?.img}
           alt="Skills hub"
+          loading="lazy"
         />
 
         <span className="title">{item?.heading}</span>
