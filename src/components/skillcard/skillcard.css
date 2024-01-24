@@ -5,6 +5,8 @@
     border-radius: 5px;
     cursor:pointer;
     position: relative;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .skillcard::before{
@@ -14,7 +16,7 @@
     bottom: 0;
     width:100%;
     height:100%;
-    background: linear-gradient(to bottom,
+    background: linear-gradient(to top,
                 rgba(0, 0, 0, 0.973),
                 rgba(62, 66, 150, 0));
 }
@@ -28,16 +30,22 @@
 .desc{
     position: absolute;
     font-weight: 300;
-    top:15px;
+    bottom:15px;
     left:15px;
 }
 
 .title{
     position: absolute;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 22px;
     left:15px;
-    top:30px;
+    bottom:30px;
+}
+
+.stroke{
+    position: absolute;
+        left: 15px;
+        bottom: 10px;
 }
 
 @media screen and (max-width:854px) {
