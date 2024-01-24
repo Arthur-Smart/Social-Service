@@ -23,7 +23,9 @@ function Footer() {
           src={require("../../assets/flag.png")}
           alt="skill hub"
         />
-        <p className="text-zinc-500 mb-2 text-lg">A solution for kenyans</p>
+        <p className="text-zinc-500 mb-2 text-[15px] md:text-lg">
+          A solution for kenyans
+        </p>
         <div className="footer-search-button items-center  flex">
           <input
             value={title}
@@ -44,7 +46,7 @@ function Footer() {
         <div className="footer-left flex items-center">
           <p className="text-zinc-400 text-3xl font-bold">SkillsHub</p>
           <p className="ml-3 text-zinc-400">
-            Developed with love by Arthur &copy;2023
+            Developed with love by Arthur &copy;2024
           </p>
         </div>
         <div className="foooter-right flex items-center">
