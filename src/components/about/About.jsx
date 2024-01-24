@@ -3,7 +3,7 @@ import "./about.css";
 
 function About() {
   return (
-    <section className="about flex items-center justify-center py-10 px-4">
+    <section className="about flex items-center justify-center py-10">
       <div className="container info-wrapper  rounded-md p-4">
         <h1 className="font-bold text-2xl text-amber-500">Why skillsHub</h1>
         <p className="text-white">
