@@ -31,7 +31,7 @@ function Navbar() {
       <div className="container main-n-wrapper flex items-center justify-between">
         <div className="left-nav">
           <Link to="/">
-            <p className="font-bold text-3xl cursor-pointer">
+            <p className="font-bold text-2xl md:text-3xl cursor-pointer">
               Skills<span className="text-amber-500">Hub</span>
             </p>
           </Link>

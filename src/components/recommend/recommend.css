@@ -35,5 +35,10 @@
 .recomment-btn-2 {
        margin-left: 0;
        margin-top: 5px;
+       
+    }
+
+    .recommend-link{
+width: 100%;
     }
 }
